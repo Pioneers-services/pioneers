@@ -1,0 +1,19 @@
+# Local secrets and operational data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.agekey
+*.sql
+*.sql.gz
+*.dump
+*.bak
+*.age
+*.tar
+*.tar.gz
+.DS_Store
+node_modules/
+__pycache__/
+backups/
+uploads/
