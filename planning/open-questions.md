@@ -4,7 +4,7 @@ Status: Unresolved; do not invent defaults as founder approval
 ## Needed to approve infrastructure
 1. Pioneers legal registration country and first customer jurisdictions.
 2. Monthly pilot hosting/service budget, separate from coding-model subscriptions.
-3. Initial companies, staff/concurrency, file growth, integrations and availability expectations.
+3. Pilot confirmed: AKA Homes only, 21 users. Additional customer sizing assumption: at least 15 users. Still open: concurrent usage, file growth, integrations and availability expectations.
 4. Data residency/privacy obligations and acceptable recovery point/time objectives.
 5. Billing provider eligibility, currencies, tax requirements and subscription packaging.
 
