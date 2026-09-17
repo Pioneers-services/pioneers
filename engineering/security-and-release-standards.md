@@ -14,3 +14,12 @@ Status: Proposed implementation standards derived from agreed safety principles
 - Isolate coding agents; no default production credentials. Provider diversity can help review but does not replace tests or human domain review.
 - Backup database, files and recovery instructions; encrypt independently stored copies; test restoration; monitor failed or stale jobs.
 - Purchases and production releases require Shaheen's explicit approval. Branch protection/CI enforcement is not configured merely by writing this policy.
+
+## Model selection for delegated engineering tasks
+- Match model capability to task risk and judgment required, not habit or cost-minimization alone.
+- Mechanical tasks with one obviously correct answer (git plumbing, a hardcoded-path fix, a repo toggle, a boilerplate CI workflow) go to a fast, cheap model.
+- Tasks with real reasoning depth and a security or correctness cost of error (permission logic, auth, data-handling redesigns) go to the most capable model, run at high reasoning effort, given the full task context up front rather than a partial slice.
+- Writing and communication tasks (reports, docs, design notes) go to a mid-tier model.
+- Every delegated task carries an explicit, falsifiable acceptance test stated before work starts — not "make it work." Same principle as the failing-behavioral-test requirement above, applied to task assignment.
+- No agent's self-report is accepted as verification, per the AI-self-reports rule above; this applies regardless of which model produced the work.
+- Security- or correctness-sensitive changes get independent re-verification — rerun the test, inspect the actual output file or state directly — before the fix is treated as resolved, regardless of which model produced it.
