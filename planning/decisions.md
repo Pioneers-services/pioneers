@@ -12,8 +12,8 @@ Baseline: 2026-09-08. Source: Shaheen's explicit planning discussion.
 | D-007 | Agreed | New modules require Pioneers engineering/review; memory and learning do not imply uncontrolled code changes. |
 | D-008 | Agreed | Shaheen has final authority; AI CEO Assistant supports company-wide planning, coordination and verification. |
 | D-009 | Approved action | Initialize this private repository as the Pioneers planning area. No production changes included. |
-| D-010 | Proposed | Modular monolith, managed PostgreSQL/object storage, TypeScript stack and replaceable model APIs. |
-| D-011 | Open | Hosting providers, regions, billing provider, application budget and final launch scope. |
+| D-010 | Agreed (2026-09-18) | Modular monolith, managed PostgreSQL/object storage, TypeScript stack and replaceable model APIs. Direction approved; this covers architecture shape only, not a specific vendor selection or spend commitment. |
+| D-011 | Open | Hosting providers, regions, billing provider, application budget and final launch scope. Explicitly not resolved by D-010's approval — no provider, region or budget figure has been set; do not provision or spend against this until a specific number is recorded here. |
 | D-012 | Operational constraint | Backup storage budget is free-only for now; scheduling remains incomplete. |
 | D-013 | Agreed | First real pilot customer: AKA Homes, 21 users. An additional customer is expected to have at least 15 users; this is a planning assumption, not a subscription minimum. Concurrent usage is not yet established. |
 | D-014 | Mandatory requirement | Connect X1 must have multi-tenant SaaS architecture from day one, even while only AKA is live. Tenant isolation, configuration-based onboarding, subscription entitlements and separate environments are foundational; no company-specific code forks. Implementation and isolation must be verified before a second real tenant is onboarded. |
