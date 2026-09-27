@@ -9,6 +9,7 @@ Status: Proposed implementation standards derived from agreed safety principles
 - Append-only server-originated audit events; external protection for threat models including privileged compromise.
 - Validated output handling, file verification, bounded retries, session revocation and explicit failures.
 - No production patching as routine development. Small reviewable branches and migrations with a single owner.
+- Visual architecture map, checked against sources, before any build (D-020; skill `architecture-visual-map`).
 - Feature specification → failing behavioral test → implementation → independent review → integration/browser test → approved release.
 - Document commands, actual results and limitations. Syntax checks, line-count changes and AI self-reports alone are not acceptance evidence.
 - Isolate coding agents; no default production credentials. Provider diversity can help review but does not replace tests or human domain review.

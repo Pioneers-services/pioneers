@@ -24,3 +24,30 @@ Baseline: 2026-09-08. Source: Shaheen's explicit planning discussion.
 | D-019 | Agreed (2026-09-18) | pioneers.services is the commercial/marketing website only (the pioneers-site-local vertical slice: public pages, consultation leads, admin CMS). Carminta X1, Connect X1 and Servio X3 are separate products worked on later; their multi-tenant SaaS requirement (D-014) applies to those products, not to the marketing website. |
 
 Record amendments with rationale and approval; do not silently rewrite historical decisions. Detailed technical standards and sequencing remain proposals until reviewed.
+
+## D-015 — Product family and naming (2026-09-10, approved by Shaheen)
+- Carminta is Pioneers Services' PRIVATE orchestrator; never sold separately.
+- Each product carries one daughter agent: **Connect X1 → Carminta X1**, **Servio X3 → Carminta X3**. No public "grandchild" layer.
+- Product names always carry their generation suffix (Connect X1, Servio X3).
+- All products are served under pioneers.services; no separate product domains.
+- Pioneers brand identity, trademark direction and fonts: approved. Carminta emblem: rework pending (keep lower signal element; replace upper part).
+
+## D-016 — Governance per project (2026-09-10)
+Each project keeps its own folder under projects/ with decisions.md and open-questions.md. Company-wide decisions stay in planning/decisions.md.
+
+## D-017 — Website & operations platform direction (2026-09-10)
+- Website languages: Arabic + English now; French next stage.
+- Approved first delivery: public site + minimal lead inbox. Include chatbot-led consultation, social links and consent-based source tracking. Quotations/proforma/invoices and CMS remain requested follow-on scope; exact phase order is proposed, not approved.
+- Pioneers will use Connect X1 for its ERP. Reusing its modules for the website dashboard is a proposal; minimal lead inbox first is approved. No numeric tenant ID or shared runtime architecture is approved.
+- Chat: chatbot first; escalates to human consultation request. Two staff members answer/follow up.
+- Social: LinkedIn, Instagram, Facebook, X, TikTok — outbound links + source tracking only; no DM integration.
+- Analytics: self-hosted, consent-based, no third-party data sharing.
+- Email: Hostinger Starter Business Email. Mailbox activation pending; confirm original suppost@pioneers.services versus suggested support@pioneers.services before provisioning.
+- Hosting preference: same VPS as AKA, with separate application credentials, database, network and storage plus resource limits. Containers share the host kernel, resources and failure domain: total isolation is not possible. Docker installation and production deployment remain pending explicit approval.
+- Invoicing entity: Egypt (registration + VAT/tax number to be supplied); currency follows customer origin.
+
+## D-020 — Visual architecture map before building (2026-09-27, approved by Shaheen)
+- Every new project and every engineering-architecture change gets a visual map (actors, components and hosting, labelled data flows, trust boundaries, ownership, phases, unknowns) before build starts.
+- The map is checked against real sources (code/config, vendor docs, decisions, client confirmation); anything unsourced is drawn as an unknown and logged in open-questions.md.
+- One map per project at `projects/<project>/architecture-map.html`, kept current with a "last verified" date.
+- Encoded as the Carminta skill `architecture-visual-map` (carminta/skills/, Claude skills format); Claude uses the same skill as Carminta's instructor.
