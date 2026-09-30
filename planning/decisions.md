@@ -51,3 +51,9 @@ Each project keeps its own folder under projects/ with decisions.md and open-que
 - The map is checked against real sources (code/config, vendor docs, decisions, client confirmation); anything unsourced is drawn as an unknown and logged in open-questions.md.
 - One map per project at `projects/<project>/architecture-map.html`, kept current with a "last verified" date.
 - Encoded as the Carminta skill `architecture-visual-map` (carminta/skills/, Claude skills format); Claude uses the same skill as Carminta's instructor.
+
+## D-021 — Connect X1 first industry: interiors and fit-out (2026-10-01, approved by Shaheen)
+- Connect X1's first market is the interiors value chain: architects, interior designers, fit-out contractors, joinery/carpentry workshops and furniture/fit-out factories. Replaces the 2026-09-25 "SMBs, no single vertical" direction.
+- Projects are the product core: brief → design stages → drawings/revisions → quotation with revisions and client approval → measurements → workshop/factory production → site → handover → snagging/warranty; suppliers, per-project materials/costing, accounting and Bahrain VAT underneath.
+- Pilots: AKA Homes (21 users) and a Bahrain interior design studio (8–10 users, ~20 live projects, needs suppliers + accounting, ~2-month window). Everything is built by Pioneers; no third-party ERP/accounting products.
+- Go-live must include the NBR VAT return (boxes 1–17), matching the audited competitor InventERP; projects, quotation revisions/approvals and Carminta X1 are the differentiators.
