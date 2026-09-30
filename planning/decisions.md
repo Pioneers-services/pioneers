@@ -62,3 +62,9 @@ Each project keeps its own folder under projects/ with decisions.md and open-que
 - Every Pioneers feature, module and add-on (e.g. Connect X1 modules M1–M23 and add-ons A1–A15) is listed separately on its own page of the Pioneers website store.
 - Not an open marketplace: Pioneers is the only provider across every package and does the activation per project/tenant; each add-on carries its own fee.
 - Prices are set later in the pricing system. Source: founder decision in the 2026-09-25 strategy session; Product Strategy & Roadmap doc, decisions table.
+
+## D-023 — Connect X1 catalog: inclusions and commerce connectors (2026-10-01, approved by Shaheen)
+- Carminta X1 (catalog M22) is included in every Connect X1 subscription, not sold as a separate module. The earlier "Carminta X1 metered by user type" direction (2026-09-25) is superseded unless Shaheen restates it for the subscription tiers.
+- The country tax pack (catalog A1, e.g. Bahrain VAT with the NBR return boxes 1–17) is included.
+- Commerce: the **Shopify connector is active** and is the e-commerce path for now. The **Connect X1 Storefront is prepared as a product and listed in the Add-on Store (D-022) but deactivated** until it is ready.
+- **Website integration** (Pioneers-built websites ↔ Connect X1, e.g. enquiries/forms into CRM, catalogue and orders where relevant) is an active connector.
