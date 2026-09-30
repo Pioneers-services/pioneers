@@ -57,3 +57,8 @@ Each project keeps its own folder under projects/ with decisions.md and open-que
 - Projects are the product core: brief → design stages → drawings/revisions → quotation with revisions and client approval → measurements → workshop/factory production → site → handover → snagging/warranty; suppliers, per-project materials/costing, accounting and Bahrain VAT underneath.
 - Pilots: AKA Homes (21 users) and a Bahrain interior design studio (8–10 users, ~20 live projects, needs suppliers + accounting, ~2-month window). Everything is built by Pioneers; no third-party ERP/accounting products.
 - Go-live must include the NBR VAT return (boxes 1–17), matching the audited competitor InventERP; projects, quotation revisions/approvals and Carminta X1 are the differentiators.
+
+## D-022 — Pioneers Add-on Store (decided 2026-09-25, recorded 2026-10-01, approved by Shaheen)
+- Every Pioneers feature, module and add-on (e.g. Connect X1 modules M1–M23 and add-ons A1–A15) is listed separately on its own page of the Pioneers website store.
+- Not an open marketplace: Pioneers is the only provider across every package and does the activation per project/tenant; each add-on carries its own fee.
+- Prices are set later in the pricing system. Source: founder decision in the 2026-09-25 strategy session; Product Strategy & Roadmap doc, decisions table.
