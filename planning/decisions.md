@@ -102,3 +102,15 @@ Each shared record has one owning area (e.g. invoices → Finance; the cutlist �
   - DigitalOcean: cheapest with a standby, but no Gulf region, and from 15 Oct 2026 a standby needs Advanced Edition.
   - US East, Frankfurt and Mumbai: 5–19% cheaper but farther from, and outside, the launch countries.
 - **Launch countries:** Bahrain, Egypt, KSA, UAE, Oman and Kuwait. AWS has no live KSA region. A tenant that must stay in-country uses dedicated hosting (catalog A14) in an approved location. Each country's data-protection rules get a legal review before customers there are signed.
+
+## D-026 — Connect X1 Wave 1 scope after the Qaflo benchmark; HR as a separable module (2026-10-02, approved by Shaheen)
+Benchmark: Qaflo (Dubai), from strategy doc §11. Gaps were logged as Q32–Q40 in `projects/connect-x1/open-questions.md`.
+- **Added to Wave 1:**
+  - committed cost in project costing (planned vs committed vs actual, margin per project);
+  - snag lists and handover;
+  - stock on hand vs promised;
+  - retention and post-dated cheques, in the Financial system.
+- **Workshop tracking** (carpentry, metal, painting, finishing stages) belongs to the Production module (Wave 2), not Projects.
+- **HR is a full module, built like the Financial system (D-024):** its own boundary and interfaces, so it can scale or become a separate product later. Bahrain rules (wage protection, LMRA permits, end-of-service gratuity) get checked against official sources when HR is designed.
+- **Not now:** GPS site visits (dropped). Samples library and fleet tracking come later (Wave 3 or after).
+- **Risk:** Wave 1 grows. If the about-10-week plan slips, accounting reports slip first; tax-invoice correctness never slips (unchanged rule).
