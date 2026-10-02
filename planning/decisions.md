@@ -162,3 +162,15 @@ These answer `projects/connect-x1/open-questions.md` Q41–Q47.
 - Connect X1 is totally separate from Pioneers in the market: its own brand, website and domain. This replaces, for Connect X1, D-015's "all products are served under pioneers.services; no separate product domains". D-019 (pioneers.services is the Pioneers marketing site only) stands.
 - The Connect X1 website carries its own product pages, packages and pricing (D-027/D-028), the no-registration explore journey with Carminta answering feature questions (D-024), and checkout.
 - Open (to confirm with Shaheen): the domain name and its purchase (needs explicit approval); whether Connect X1 is a separate legal entity or a Pioneers product brand (D-028 says Pioneers invoices as an Egyptian company); whether its modules and add-ons still appear on the Pioneers Add-on Store (D-022) or only on the Connect X1 site; trademark clearance for "Connect X1"; brand identity (logo, colours) separate from Pioneers; email domain for support and customer service.
+
+## D-030 — Connect X1 brand details, domain and tenant addresses (2026-10-02, approved by Shaheen; completes D-029)
+These answer `projects/connect-x1/open-questions.md` Q50–Q56.
+- **Domain:** `connectx1.com`. It was available on 2026-10-02 at $11.25/year through Vercel. **Not bought yet:** the purchase needs Shaheen's explicit approval.
+- **Legal status:** Connect X1 is a **product of Pioneers**, not a separate company. Pioneers (an Egyptian company) invoices, as in D-028.
+- **Store listing:**
+  - Connect X1 features and add-ons are sold in an Add-on Store on the Connect X1 website.
+  - Separable modules (for example the Financial system, and HR per D-026) are also listed on pioneers.services as Pioneers products (D-022).
+- **Trademark:** "Connect X1" is registered in each launch country later, after launch. Until then, the name carries an unregistered-trademark risk.
+- **Brand identity:** Connect X1 gets its own identity (logo, colours), separate from Pioneers. The design system and prototype get rebranded once it exists.
+- **Support email:** `support@connectx1.com`. D-028's seat-change requests go here.
+- **Tenant addresses:** every customer gets an address on the shared domain, for example `akahomes.connectx1.com`. As soon as payment is confirmed, the customer's dashboard opens directly for implementation (setup journey, D-024).
