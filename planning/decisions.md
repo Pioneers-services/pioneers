@@ -196,3 +196,10 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 - **Connect X1 subscriptions can't be cancelled or refunded.** A subscription runs its full term. D-028's account-closure settlement still applies to a customer who stops paying. Each launch country's consumer-protection rules get checked in the legal review (Q30). This doesn't affect refunds that tenants give their own customers inside the product.
 - **Checkout data handling approved:** a requested address is held for 30 minutes during checkout, and unpaid checkout records are deleted after 30 days, pending the legal review. A tenant only becomes active after the payer verifies their email and sets up two-factor login (team review S04).
 - **The DNS plan for connectx1.com is approved** (`architecture-map.html`, PR #2): DNS stays at Hostinger, and the live email records stay unchanged. Each new record is added only when its service is deployed, and confirmed with Shaheen at that time.
+
+## D-033 — Connect X1 brand identity: "Studio" (2026-10-02, approved by Shaheen; completes D-030 brand identity)
+- Shaheen chose brand direction **C, Studio**, from seven options (A–G): a "connected rooms" mark (2×2 rooms, two outlined and two filled, arranged diagonally so they read as an "x"), with a lowercase wordmark "connect x1" where "x1" is set in coral.
+- Palette: Forest #173B36 (primary), Coral #E58C6A (accent), Stone #E9E5DD, Sage #7FA89E, Ink #14211F. Text-safe shades: Coral text #C65023, Sage text #557E74. White never sits on Coral (2.53:1); main buttons are Forest with white text (12.24:1). Pioneers navy and gold are not used.
+- Typeface: Readex Pro (Arabic and English, SIL OFL). Wordmarks are outlined paths, so they don't depend on an installed font.
+- Kit: `~/Pioneers/brand/connect-x1-studio-v1/` (logos, app icon, favicon, PNGs, `tokens.css`/`tokens.json`, README with contrast rules, `build.py`). The Connect X1 design system and prototype replace their "Pioneers ERP" placeholders with this kit.
+- Open: a pre-launch trademark search is recommended; an Arabic wordmark lockup is optional.
