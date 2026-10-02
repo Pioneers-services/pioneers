@@ -115,7 +115,7 @@ Benchmark: Qaflo (Dubai), from strategy doc §11. Gaps were logged as Q32–Q40 
 - **Not now:** GPS site visits (dropped). Samples library and fleet tracking come later (Wave 3 or after).
 - **Risk:** Wave 1 grows. If the about-10-week plan slips, accounting reports slip first; tax-invoice correctness never slips (unchanged rule).
 
-## D-026 — Connect X1 pricing model (2026-10-02, approved by Shaheen)
+## D-027 — Connect X1 pricing model (2026-10-02, approved by Shaheen; first committed as a duplicate D-026, renumbered)
 **Structure.** Price = industry package × seat tier. Tiers: Start (5 seats: 1 owner, 1 admin, 3 users), Team (10: 1 owner, 1 admin, 8 managers/users), Business (20: 1 owner, 1 admin, 18), "Call us" for 50+ seats. Roles inside a tier don't change the price; each seat is placed in the hierarchy at implementation and its access set in access control. Workshop/site workers are normal seats (no light user, no workshop stations). Extra seats are sold between tiers; the system moves the customer to the next tier automatically when that is cheaper.
 
 **List prices (BHD/month; Carminta X1 and the home-country tax pack included; shared hosting):**
