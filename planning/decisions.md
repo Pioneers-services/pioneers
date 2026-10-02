@@ -203,3 +203,10 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 - Typeface: Readex Pro (Arabic and English, SIL OFL). Wordmarks are outlined paths, so they don't depend on an installed font.
 - Kit: `~/Pioneers/brand/connect-x1-studio-v1/` (logos, app icon, favicon, PNGs, `tokens.css`/`tokens.json`, README with contrast rules, `build.py`). The Connect X1 design system and prototype replace their "Pioneers ERP" placeholders with this kit.
 - Open: a pre-launch trademark search is recommended; an Arabic wordmark lockup is optional.
+
+## D-034 — Every tenant customises its own brand guideline (2026-10-02, approved by Shaheen; extends D-024 branding step)
+- Each customer sets up its **own brand guideline** inside Connect X1: logo (light/dark/mono), colour palette, typography choice, and document styling. It applies to everything the customer's clients and staff see from that company: quotations, invoices, pro-forma invoices, purchase orders, delivery notes, handover certificates, emails, the client portal, and the app theme for its own staff.
+- The brand guideline is set during setup (step 4, D-024), where Carminta proposes it from uploaded logo/brand files. The owner approves it, and it can be edited and versioned later; the version in force is kept with each issued document.
+- Guard rails (fixed core): contrast is checked automatically, and colour pairs that fail WCAG AA for text are blocked, with Carminta suggesting the nearest passing shade; document layouts keep the legally required tax-invoice fields (A1/NBR) whatever the styling; fonts come from a supported Arabic and English list (licensing).
+- Connect X1's own brand (D-033) stays on the platform shell: sign-in, billing and the Connect X1 website.
+- Open: how far white-labelling goes (whether a "Powered by Connect X1" mark appears on client-facing documents and the portal, and whether it can be removed for a fee); whether customers can upload their own font files (licensing and Arabic coverage).
