@@ -264,3 +264,16 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
   - tenant isolation tested.
 
   It is built on the Mumbai foundation (D-037). Each new AWS resource still needs an itemised cost approval.
+
+## D-039 — Connect X1 sign-in is built by Pioneers (2026-10-02, approved by Shaheen; resolves Q11)
+- **Sign-in and two-factor login are Pioneers' own code on the Connect X1 database.** There is no outside identity product such as Cognito. This follows Shaheen's rule that everything is built by Pioneers.
+- **Fixed core** (no tenant can turn these off):
+  - passwords hashed with Argon2id;
+  - two-factor login with an authenticator app (TOTP), required for every Owner (D-024);
+  - session tokens stored only as hashes, revocable, with idle and absolute expiry;
+  - account lockout after repeated failures;
+  - every sign-in event in the audit log;
+  - Pioneers support never holds an Owner membership.
+- **Cost:** none.
+- **Accepted trade-off:** Pioneers owns the security of this code. It gets negative tests in phase 2 and an independent security review in phase 8 (D-031).
+- **Email for invitations and password resets (Q12)** stays open. Phase 2 uses a development outbox that sends nothing; the provider is chosen before phase 3.
