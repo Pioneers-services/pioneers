@@ -142,3 +142,18 @@ Add-ons are priced separately.
 - Discounts apply in the first year only; founding price lock for the first year only; the setup fee is never credited back.
 - Default payment: two payments, every 6 months, each = (monthly price × 12 + implementation fee) ÷ 2. Example: 95 × 12 + 350 = 1,490 → BHD 745 every 6 months.
 - Yearly prepayment: 2 months free (pay 10, get 12), capped by the floor.
+
+## D-028 — Connect X1 billing rules (2026-10-02, approved by Shaheen; amends D-027)
+These answer `projects/connect-x1/open-questions.md` Q41–Q47.
+- **Seat changes:**
+  - No seat or tier changes in the first 6-month period.
+  - For the next period, the customer emails customer service at least 2 months before that period starts.
+  - The customer is responsible for the number of seats before paying.
+  - Billing never moves a customer up or down a tier mid-period. This replaces D-027's automatic tier move.
+- **Renewal:** after year 1, renewal is at full list price. The system sends 2 renewal notices in the last 2 months of the term.
+- **Carminta X1 allowance:** usage isn't counted for an initial period after implementation, 3, 5 or 7 days depending on the package. Counting starts after that.
+- **Currency and invoicing:** the currency follows the country the customer chooses at setup. Pioneers invoices as an Egyptian company.
+- **Floor:** lowered from D-027's BHD 9.5 to **BHD 8 per seat per month** in the worst case. This is a startup marketing allowance.
+- **Missed payment:**
+  - The tenant is locked until the full outstanding balance is paid.
+  - A customer who closes the account pays the full (undiscounted) implementation fee, and past periods are recharged at list price with no discount.
