@@ -157,3 +157,8 @@ These answer `projects/connect-x1/open-questions.md` Q41–Q47.
 - **Missed payment:**
   - The tenant is locked until the full outstanding balance is paid.
   - A customer who closes the account pays the full (undiscounted) implementation fee, and past periods are recharged at list price with no discount.
+
+## D-029 — Connect X1 as a separate brand with its own website and domain (2026-10-02, approved by Shaheen)
+- Connect X1 is totally separate from Pioneers in the market: its own brand, website and domain. This replaces, for Connect X1, D-015's "all products are served under pioneers.services; no separate product domains". D-019 (pioneers.services is the Pioneers marketing site only) stands.
+- The Connect X1 website carries its own product pages, packages and pricing (D-027/D-028), the no-registration explore journey with Carminta answering feature questions (D-024), and checkout.
+- Open (to confirm with Shaheen): the domain name and its purchase (needs explicit approval); whether Connect X1 is a separate legal entity or a Pioneers product brand (D-028 says Pioneers invoices as an Egyptian company); whether its modules and add-ons still appear on the Pioneers Add-on Store (D-022) or only on the Connect X1 site; trademark clearance for "Connect X1"; brand identity (logo, colours) separate from Pioneers; email domain for support and customer service.
