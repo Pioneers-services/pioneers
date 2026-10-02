@@ -81,3 +81,24 @@ Each shared record has one owning area (e.g. invoices → Finance; the cutlist �
 **Owner role.** Sees everything in their own company only; at least one owner always (ownership is transferred, never left empty); two-factor login required; every owner action is logged; approvals still apply; decides who else sees salaries/payroll. Pioneers support is never an owner — separate, time-limited, logged access.
 
 **Timeline.** Wave 1 grows to about 10 weeks (option A): Carminta as setup builder, document reading and branding move into Wave 1; Carminta's daily project-watching stays in Wave 2.
+
+## D-025 — Connect X1 hosting: AWS, Bahrain home region (2026-10-02, approved by Shaheen)
+- **Stack and hosting:** the NestJS (TypeScript) server, workers and Carminta X1 run as containers on AWS ECS Fargate (ARM); PostgreSQL on Amazon RDS. Home region **Bahrain `me-south-1`**; backup copies go to **UAE `me-central-1`**, so data and backups stay in the Gulf. Kept from the hosting audit: React screens on Vercel Pro, files on Cloudflare R2, off-site backups on Backblaze B2. The AI provider choice is not part of this decision.
+- **Basis:** vendor price lists and docs, checked 2026-10-02 (`projects/connect-x1/hosting-test-results.md`). Shaheen skipped the week-1 hosting test. Latency figures are estimates and get measured during the build.
+- **Start lean, grow with customers** (on-demand prices):
+  - pilot about $73/month (1 container, load balancer, RDS db.t4g.micro single-AZ with 7-day point-in-time restore);
+  - before go-live, a second container (about +$19) and a Multi-AZ standby (about +$17);
+  - about $560–660/month at 500 users online at once.
+  - The account has $120 of AWS credit.
+- **Cost guardrails:**
+  - budget alerts ($20, $50);
+  - Cost Anomaly Detection;
+  - fixed scaling ceilings, no NAT gateway, 14-day log retention;
+  - every resource tagged;
+  - no root use.
+  - Each new resource is created only after Shaheen approves an itemised cost list.
+- **Rejected:**
+  - Supabase Pro in Mumbai: no failover standby on Pro, point-in-time restore is a $100/month add-on, and it means two vendors.
+  - DigitalOcean: cheapest with a standby, but no Gulf region, and from 15 Oct 2026 a standby needs Advanced Edition.
+  - US East, Frankfurt and Mumbai: 5–19% cheaper but farther from, and outside, the launch countries.
+- **Launch countries:** Bahrain, Egypt, KSA, UAE, Oman and Kuwait. AWS has no live KSA region. A tenant that must stay in-country uses dedicated hosting (catalog A14) in an approved location. Each country's data-protection rules get a legal review before customers there are signed.
