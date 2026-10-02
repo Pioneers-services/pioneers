@@ -114,3 +114,31 @@ Benchmark: Qaflo (Dubai), from strategy doc §11. Gaps were logged as Q32–Q40 
 - **HR is a full module, built like the Financial system (D-024):** its own boundary and interfaces, so it can scale or become a separate product later. Bahrain rules (wage protection, LMRA permits, end-of-service gratuity) get checked against official sources when HR is designed.
 - **Not now:** GPS site visits (dropped). Samples library and fleet tracking come later (Wave 3 or after).
 - **Risk:** Wave 1 grows. If the about-10-week plan slips, accounting reports slip first; tax-invoice correctness never slips (unchanged rule).
+
+## D-026 — Connect X1 pricing model (2026-10-02, approved by Shaheen)
+**Structure.** Price = industry package × seat tier. Tiers: Start (5 seats: 1 owner, 1 admin, 3 users), Team (10: 1 owner, 1 admin, 8 managers/users), Business (20: 1 owner, 1 admin, 18), "Call us" for 50+ seats. Roles inside a tier don't change the price; each seat is placed in the hierarchy at implementation and its access set in access control. Workshop/site workers are normal seats (no light user, no workshop stations). Extra seats are sold between tiers; the system moves the customer to the next tier automatically when that is cheaper.
+
+**List prices (BHD/month; Carminta X1 and the home-country tax pack included; shared hosting):**
+| Package | Start 5 | Team 10 | Business 20 | Extra seat |
+|---|---|---|---|---|
+| Architecture practice | 59 | 109 | 209 | 10 |
+| Interior design studio | 65 | 119 | 219 | 11 |
+| Architecture + Interior design | 75 | 135 | 249 | 12 |
+| Fit-out contractor | 69 | 129 | 239 | 12 |
+| Joinery workshop | 69 | 129 | 239 | 12 |
+| Furniture & fit-out factory | 75 | 139 | 259 | 13 |
+Add-ons are priced separately.
+
+**Floor.** No combination of discounts takes the effective price below BHD 9.5 per seat per month; the system caps discounts automatically.
+
+**Carminta X1.** Included with a monthly usage allowance per seat, pooled per company; extra usage is sold in packs. Owner sees usage, warned at 80%; Carminta never stops without warning. Allowance and pack price are set after Carminta's cost is measured in the test bench (working placeholder: 300 requests/seat/month; ~BHD 8 per 1,000 extra).
+
+**Hosting.** Shared (included) or Dedicated by Pioneers on AWS Bahrain (+BHD 75/month for Start/Team, +BHD 120 for Business, custom for Call us; BHD 300 one-time setup). Customer-owned cloud is not offered.
+
+**Implementation fee (one-time).** List: BHD 500 (Start), 1,000 (Team), 1,500 (Business, 20+ seats); Call us quoted. First-year discounted: BHD 350 / 750 / 1,150. Past-transaction import, extra training and custom reports are charged per day.
+
+**Offers and payment.**
+- The full list price is always shown first at checkout, then the discount.
+- Discounts apply in the first year only; founding price lock for the first year only; the setup fee is never credited back.
+- Default payment: two payments, every 6 months, each = (monthly price × 12 + implementation fee) ÷ 2. Example: 95 × 12 + 350 = 1,490 → BHD 745 every 6 months.
+- Yearly prepayment: 2 months free (pay 10, get 12), capped by the floor.
