@@ -281,7 +281,7 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 ## D-040 — Connect X1 development environment on AWS (lean); system email through Hostinger (2026-10-03, approved by Shaheen; resolves Q12)
 - **Development environment in Mumbai, lean option:** about $19–25 per month, on top of the $2.40 foundation (D-035, D-037).
   - **Database:** RDS PostgreSQL 17, db.t4g.micro, single zone, 20 GB gp3, encrypted with the Connect X1 key, private subnets only, 7-day backups. About $18.35 per month including the managed admin secret.
-  - **API container:** ECS Fargate ARM, 0.25 vCPU and 0.5 GB. It runs only for jobs such as migrations and the test suite, so it costs cents per run. It has no public address and accepts no incoming connections.
+  - **API container:** ECS Fargate ARM, 0.25 vCPU and 0.5 GB. It runs only for jobs such as migrations and the test suite, so it costs cents per run. It accepts no incoming connections. While a job runs it gets a temporary public IP for outbound access to the image registry (no NAT gateway or paid endpoints), costing cents per run.
   - **Secrets:** SSM Parameter Store SecureStrings (free), encrypted with the Connect X1 key.
   - Prices come from the AWS Price List API, Mumbai, 2026-10-03.
 - **Not yet created:** the load balancer, HTTPS and `api.connectx1.com` (about $35 per month more). They get their own approval when the sign-in screens are ready. The two DNS records they need at Hostinger are confirmed with Shaheen at that time (D-032).
