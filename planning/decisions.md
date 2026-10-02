@@ -229,3 +229,22 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
   - the Connect X1 design system (version 8);
   - the prototype (`tokens.css`, icons, logo, bee).
   The brand kit `~/Pioneers/brand/connect-x1-studio-v1/` still has the D-033 colours and needs regenerating by its owner.
+
+## D-037 — Connect X1 hosting region moves to AWS Mumbai, backups in Frankfurt (2026-10-02, approved by Shaheen; replaces D-025's regions)
+- **Why:**
+  - **Bahrain (`me-south-1`)** is unavailable. AWS's public status page says the region was damaged in the Middle East conflict. Its 15 September 2026 update says AWS can't restore resources or data held only in that region.
+  - **UAE (`me-central-1`)** is damaged too. AWS recommends moving workloads out of it.
+  - D-025 had been decided without the hosting test, so this wasn't caught until the first deployment attempt. That attempt timed out at sign-in, and nothing was created.
+- **New regions:**
+  - home: **Mumbai `ap-south-1`** (application, database, files, logs);
+  - backups: **Frankfurt `eu-central-1`**, on a separate continent.
+  The stack is unchanged: ECS Fargate (ARM), RDS PostgreSQL, Vercel for screens.
+- **Measured:** connection time from Shaheen's Mac in Bahrain on 2026-10-02 (TCP connect, three tries each, first try discarded):
+  - Mumbai about 61–66 ms;
+  - Frankfurt about 124–213 ms;
+  - Tel Aviv about 196–252 ms.
+
+  The earlier estimate for Mumbai was 30–50 ms. Screen design should keep the calls a page makes one after another to a minimum.
+- **Cost:** the foundation approved in D-035 stays at about $2.40/month in Mumbai. Later costs come from the Mumbai price list and are approved when they're added.
+- **Data location changes:** tenant data is stored in India, with backups in the EU, not in the Gulf. This replaces the data-location note added to D-025 for review point R22. The per-country legal review (Q30) must confirm cross-border transfer for every launch country before go-live: Bahrain, KSA, UAE, Oman, Kuwait and Egypt.
+- **Lesson:** check the provider's status and region health before deciding on hosting or deploying anything.
