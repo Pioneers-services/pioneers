@@ -174,3 +174,18 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 - **Brand identity:** Connect X1 gets its own identity (logo, colours), separate from Pioneers. The design system and prototype get rebranded once it exists.
 - **Support email:** `support@connectx1.com`. D-028's seat-change requests go here.
 - **Tenant addresses:** every customer gets an address on the shared domain, for example `akahomes.connectx1.com`. As soon as payment is confirmed, the customer's dashboard opens directly for implementation (setup journey, D-024).
+
+## D-031 — Connect X1 Wave 1 timeline: 18 weeks (2026-10-02, approved by Shaheen; replaces the ~10-week plan in D-024/D-026)
+| Phase | Weeks | Scope | Done when |
+|---|---|---|---|
+| 1. Discovery & design | 1–2 | Workshops with both pilots using their real Excel/Word files; architecture map (D-020); Bahrain VAT rules checked against NBR; screen designs; AWS Bahrain foundation after cost approval (D-025) | Map checked and designs approved by Shaheen |
+| 2. Foundation | 3–4 | Tenants, Owner role with 2FA, users, roles, permissions, hierarchy, audit log, seat billing and the D-027/D-028 rules | Tenant isolation tested |
+| 3. Setup journey & Carminta | 5–6 | Explore without registration on the Connect X1 website (D-029/D-030), payment, country → tax/currency, branding, versioned steps, company.connectx1.com; Carminta as setup guide and document reader, with usage metering | A test company set up end to end by Carminta |
+| 4. Sales | 7–8 | Leads, customers, estimates/BOQ, quotations with revisions and approvals, branded PDFs | Lead → client-approved quotation |
+| 5. Projects | 9–10 | Stages, drawings register, measurements, snags and handover, deposit gate, dashboard | **Early pilot access (week 10): the studio uses Sales and Projects for real, with Excel kept in parallel** |
+| 6. Purchasing & stock | 11–12 | Suppliers, purchase orders, goods receipt, stock on hand vs promised, supplier bills, cost per project | Committed cost visible per project |
+| 7. Finance & VAT | 13–15 | Tax invoices, pro-forma, credit limits, retention, post-dated cheques, payments and allocation, chart of accounts, journals, ledger, P&L, balance sheet, reconciliation, lock dates, NBR VAT return (boxes 1–17), profit per project | Figures reconcile on test data |
+| 8. Hardening | 16–17 | Bahrain accountant review; security review; restore drill; speed tests from Bahrain; Arabic checks; bug fixing | Accountant signs off; restore tested |
+| 9. Go-live | 18 | Studio opening balances, training, parallel run, go-live; AKA follows | Studio runs a real month on Connect X1 |
+- Later waves (indicative): Wave 2 ≈ months 5–8 (production pipeline & cutlists, site management, variations, Carminta daily watching, client portal, WhatsApp); Wave 3 ≈ months 9–12 (HR & payroll with Bahrain rules, budgeting, warranty, more country tax packs, other add-ons).
+- Unchanged rules: if a phase slips, accounting reports slip before tax-invoice correctness; nothing goes live without the accountant's sign-off and a tested restore.
