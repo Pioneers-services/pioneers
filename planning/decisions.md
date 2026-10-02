@@ -215,3 +215,17 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 - **No pilot files.** Discovery uses Pioneers' own knowledge of the interiors workflow and synthetic sample data, not the pilots' real Excel or Word files. The phase 1 exit gate (D-031) becomes Shaheen's approval of the map and screen designs. Anything a pilot's real data would have confirmed stays marked as an unknown in `open-questions.md`, following D-020.
 - **The Bahrain accountant audits after the product is finished** (phase 8, weeks 16–17), not during specification. The financial rules (payments, deposits, VAT, posting) are written from NBR sources (`projects/connect-x1/phase-1/nbr-vat-findings.md`) and audited then. Risk accepted: corrections found in the audit may cause rework late in the plan. Tax-invoice correctness still can't slip, and nothing goes live without the accountant's sign-off (D-031).
 - **The AWS foundation in Bahrain (`me-south-1`) is approved** at about $2.40/month: network, container registry, encryption key, container cluster, logs and an activity trail (D-025). Development environments are approved separately when the build starts.
+
+## D-036 — Connect X1 colours: "Graphite and teal" (2026-10-02, approved by Shaheen; replaces the D-033 palette)
+- Shaheen found the Studio colours (Forest, Coral, Stone) not professional enough for an ERP and chose **option C, Graphite and teal**, from three options (A slate and cobalt, B light and azure, C graphite and teal).
+- **Palette:**
+  - frame: Graphite #1F2328 (sidebar and text) on cool greys (#F7F7F8 page, #FFFFFF panels, #E4E4E7 lines);
+  - action: Teal 700 #0F766E with white text (5.47:1), Teal 500 #14B8A6 for marks and indicators only;
+  - Carminta X1 only: Honey #F59E0B with Graphite text (never white);
+  - status colours: green success, orange warning, red danger, blue info.
+  Dark mode mirrors this, using graphite surfaces and lighter teal. Every text pair passes WCAG AA, checked by script.
+- **Kept from D-033:** the Readex Pro typeface, the "connected rooms" mark and wordmark (now Graphite with a teal "x1"), and the bee mascot (now honey and graphite). Pioneers navy and gold still aren't used.
+- **Applied to:**
+  - the Connect X1 design system (version 8);
+  - the prototype (`tokens.css`, icons, logo, bee).
+  The brand kit `~/Pioneers/brand/connect-x1-studio-v1/` still has the D-033 colours and needs regenerating by its owner.
