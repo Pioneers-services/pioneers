@@ -165,7 +165,7 @@ These answer `projects/connect-x1/open-questions.md` Q41–Q47.
 
 ## D-030 — Connect X1 brand details, domain and tenant addresses (2026-10-02, approved by Shaheen; completes D-029)
 These answer `projects/connect-x1/open-questions.md` Q50–Q56.
-- **Domain:** `connectx1.com`. It was available on 2026-10-02 at $11.25/year through Vercel. **Not bought yet:** the purchase needs Shaheen's explicit approval.
+- **Domain:** `connectx1.com`, **registered by Shaheen at Hostinger** on 2026-10-02 (expires 2027-10-02; transfer lock on). Email is on Hostinger: MX, SPF and DMARC (`p=none`) are published. DKIM isn't yet enabled. Checked in the registry and public DNS on 2026-10-02.
 - **Legal status:** Connect X1 is a **product of Pioneers**, not a separate company. Pioneers (an Egyptian company) invoices, as in D-028.
 - **Store listing:**
   - Connect X1 features and add-ons are sold in an Add-on Store on the Connect X1 website.
