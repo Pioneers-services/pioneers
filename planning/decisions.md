@@ -277,3 +277,17 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 - **Cost:** none.
 - **Accepted trade-off:** Pioneers owns the security of this code. It gets negative tests in phase 2 and an independent security review in phase 8 (D-031).
 - **Email for invitations and password resets (Q12)** stays open. Phase 2 uses a development outbox that sends nothing; the provider is chosen before phase 3.
+
+## D-040 — Connect X1 development environment on AWS (lean); system email through Hostinger (2026-10-03, approved by Shaheen; resolves Q12)
+- **Development environment in Mumbai, lean option:** about $19–25 per month, on top of the $2.40 foundation (D-035, D-037).
+  - **Database:** RDS PostgreSQL 17, db.t4g.micro, single zone, 20 GB gp3, encrypted with the Connect X1 key, private subnets only, 7-day backups. About $18.35 per month including the managed admin secret.
+  - **API container:** ECS Fargate ARM, 0.25 vCPU and 0.5 GB. It runs only for jobs such as migrations and the test suite, so it costs cents per run. It has no public address and accepts no incoming connections.
+  - **Secrets:** SSM Parameter Store SecureStrings (free), encrypted with the Connect X1 key.
+  - Prices come from the AWS Price List API, Mumbai, 2026-10-03.
+- **Not yet created:** the load balancer, HTTPS and `api.connectx1.com` (about $35 per month more). They get their own approval when the sign-in screens are ready. The two DNS records they need at Hostinger are confirmed with Shaheen at that time (D-032).
+- **System email (Q12):** sent by SMTP through the Hostinger mailbox `support@connectx1.com`. Shaheen confirmed it works on 2026-10-03.
+  - The Business Starter plan allows 1,000 messages a day, enough for invitations and password resets in the pilot.
+  - Replies arrive in the support inbox.
+  - SPF and DKIM are already set for Hostinger (D-030).
+  - The mailbox password is stored by Shaheen in Parameter Store and never passes through chat or Git.
+  - Revisit if volume grows, or if system mail should move to the `mail.` subdomain set out in the DNS plan.
