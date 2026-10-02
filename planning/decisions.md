@@ -248,3 +248,19 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 - **Cost:** the foundation approved in D-035 stays at about $2.40/month in Mumbai. Later costs come from the Mumbai price list and are approved when they're added.
 - **Data location changes:** tenant data is stored in India, with backups in the EU, not in the Gulf. This replaces the data-location note added to D-025 for review point R22. The per-country legal review (Q30) must confirm cross-border transfer for every launch country before go-live: Bahrain, KSA, UAE, Oman, Kuwait and Egypt.
 - **Lesson:** check the provider's status and region health before deciding on hosting or deploying anything.
+
+## D-038 — Connect X1 phase 1 approved: map and screen designs (2026-10-02, approved by Shaheen; closes the D-031 phase 1 gate as set by D-035)
+- **Approved screen designs** (in the `prototype/` folder of the connectx1 repo, Graphite and teal palette D-036, synthetic data):
+  - company setup (nine steps, contrast-checked brand guideline);
+  - project workspace (nine stages, drawings register, measurements, budget vs committed vs actual);
+  - purchasing (orders per project, goods receipt, three-way match);
+  - quotation with revisions and the advance tax invoice with the NBR Article 52(A) field check;
+  - the earlier CRM screens: leads, quotations, job and deposit gate, production, settings, audit and Carminta.
+- **Approved map:** `architecture-map.html` is updated to match. A new §8 ties each screen to its modules and flows, and the status is now "phase 1 approved". Unknowns are unchanged: 23 open, Q1–Q59.
+- **Correction:** the NBR VAT return has **18 boxes** in the January 2022 filing manual, not "boxes 1–17" as D-021 and D-031 say. Project docs now say 18; the accountant confirms against the live portal (D-035).
+- **Next:** phase 2 (weeks 3–4), the foundation build:
+  - tenants, the Owner role with two-factor login, users, roles and permissions, hierarchy and the audit log;
+  - seat billing (D-027, D-028);
+  - tenant isolation tested.
+
+  It is built on the Mumbai foundation (D-037). Each new AWS resource still needs an itemised cost approval.
