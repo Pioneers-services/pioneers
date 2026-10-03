@@ -291,3 +291,20 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
   - SPF and DKIM are already set for Hostinger (D-030).
   - The mailbox password is stored by Shaheen in Parameter Store and never passes through chat or Git.
   - Revisit if volume grows, or if system mail should move to the `mail.` subdomain set out in the DNS plan.
+
+## D-041 — Connect X1 phase 2 (foundation) complete; merged to main (2026-10-03, approved by Shaheen: "if 100% done merge to main")
+- **Audit:** `phase-2/audit.md` in the connectx1 repo. Every scope item in D-031 phase 2 has database rules, an API, a screen and tests:
+  - tenants;
+  - Owner with 2FA;
+  - users;
+  - roles and permissions;
+  - hierarchy;
+  - audit log;
+  - seat billing with the D-027/D-028 rules.
+- **Gaps closed during the audit:** hierarchy and audit screens; the D-027/D-028 pricing engine and seat-change rules; a billing date shifted by a day in UTC+3.
+- **Exit gate met:** company isolation tested.
+  - 38 of 38 tests pass locally, three runs in a row.
+  - The isolation suite passed 24/24 on AWS RDS in Mumbai.
+  - The independent security review is fixed: 3 high, 3 medium, 3 low (`phase-2/security-review.md`).
+- **Seat billing calculates and enforces the rules, but no payments are taken yet** (Q31). Prices are in BHD only until Q48 is answered.
+- **Next:** phase 3 (weeks 5–6) — setup journey, payment, and Carminta as setup guide. The load balancer, `api.connectx1.com` and Vercel get their own cost approval when needed.
