@@ -308,3 +308,10 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
   - The independent security review is fixed: 3 high, 3 medium, 3 low (`phase-2/security-review.md`).
 - **Seat billing calculates and enforces the rules, but no payments are taken yet** (Q31). Prices are in BHD only until Q48 is answered.
 - **Next:** phase 3 (weeks 5–6) — setup journey, payment, and Carminta as setup guide. The load balancer, `api.connectx1.com` and Vercel get their own cost approval when needed.
+
+## D-042 — Connect X1 branding rules for tenants; legal review done (2026-10-03, approved by Shaheen; resolves Q58, Q59, Q30)
+- **Q58 White-labelling: yes.** Tenants apply their own logo, colours and documents (D-034).
+  - **Shared hosting:** a small "Powered by Connect X1" mark always stays on client-facing documents and the client portal. It can't be removed.
+  - **Dedicated hosting** (the +75 / +120 BHD option, D-027): full white-label, and the mark can be removed. No separate fee.
+- **Q59 Customer fonts: no uploads.** Tenants choose only from the Connect X1 supported font list. This avoids font-licence risk and keeps Arabic coverage checked.
+- **Q30 Data protection:** Shaheen confirmed on 2026-10-03 that the legal review is done for the current hosting (data in Mumbai, backups in Frankfurt; D-037). File the written outcome in the connectx1 repo next to `open-questions.md`.
