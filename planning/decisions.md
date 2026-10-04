@@ -315,3 +315,21 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
   - **Dedicated hosting** (the +75 / +120 BHD option, D-027): full white-label, and the mark can be removed. No separate fee.
 - **Q59 Customer fonts: no uploads.** Tenants choose only from the Connect X1 supported font list. This avoids font-licence risk and keeps Arabic coverage checked.
 - **Q30 Data protection:** Shaheen confirmed on 2026-10-03 that the legal review is done for the current hosting (data in Mumbai, backups in Frankfurt; D-037). File the written outcome in the connectx1 repo next to `open-questions.md`.
+
+## D-043 — Connect X1 launch countries: all open at checkout, Libya added (2026-10-04, approved by Shaheen)
+- **Launch countries are now seven:** Bahrain, Saudi Arabia, UAE, Oman, Kuwait, Egypt and **Libya** (new).
+- **Every launch country can check out now.** The company works in its own currency (BHD, SAR, AED, OMR, KWD, EGP, LYD). Its subscription is billed in BHD until local prices are set (Q48).
+- **A company goes live only when its country's tax pack is ready.** The pack must be checked against that tax authority's sources, so the company never issues tax invoices its government rejects. Setup can be finished before that.
+- **Today only Bahrain's pack is ready.** What each of the others needs (sources checked 2026-10-04):
+
+| Country | Currency | VAT | E-invoicing the tax pack must connect to |
+|---|---|---|---|
+| Saudi Arabia | SAR | 15% | ZATCA Fatoora integration phase; the next wave must integrate by 1 February 2027 |
+| Egypt | EGP | 14% | ETA e-invoice and e-receipt clearance (mandatory for B2B since 2023) |
+| Oman | OMR | 5% | Mandatory e-invoicing from April 2027 (OTA Decision 189/2026) |
+| UAE | AED | 5% | None in this pack yet |
+| Kuwait | KWD | none | None |
+| Libya | LYD | none | None |
+
+- **Consequence for the plan:** the Saudi and Egyptian packs are integration projects. They aren't a settings change, and they need their own scope and schedule before those customers can go live (the D-031 plan has other countries' tax packs in Wave 3).
+- **VAT numbers:** Bahrain's format (15 digits) is enforced. The other countries' formats are verified when their packs are built. No VAT number is accepted in Kuwait or Libya.
