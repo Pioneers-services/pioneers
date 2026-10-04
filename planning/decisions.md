@@ -532,3 +532,22 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - **The owner marks it** in the company's rules: which roles may approve quotations, each with an optional amount limit. For example, manager up to BHD 5,000 and owner with no limit.
   - A quotation over a person's limit goes to someone whose limit covers it.
   - Every approval is recorded with who approved, when, and the amount.
+
+## D-054 — Connect X1 screens: one step per page, leads named after the person, project handover, letterheads, a dashboard for each user (2026-10-05, decided by Shaheen; replaces the one-page job layout in D-038)
+- **Rejected:**
+  - the one-page sales workflow, which was crowded, badly arranged, and had no edit, back or delete;
+  - naming a lead after what the customer wants.
+- **Every step gets its own page**, with the same page frame:
+  - **Back**, **Edit**, **Step back** and **Delete** on every page.
+  - Delete is only for records nothing depends on yet. Anything else is cancelled or marked lost with a reason, and stays in history.
+- **A lead is named after the contact person.** "Interested in" is a list of any number of items.
+- **Handover:**
+  - When the invoice (the advance invoice) is created, Connect X1 creates the **project** with a full handover pack.
+  - The project page tracks everything about the job, with a tab for each department.
+  - The deposit gate still controls production (D-031).
+- **Letterheads:**
+  - 5 letterhead styles for every generated PDF.
+  - Each uses the company's own logo and branding, and can be adjusted.
+  - Tax invoices always keep the fields the tax authority requires.
+- **Home is a dashboard for each user**, by role.
+- **Design:** `phase-4/screens.md` in the connectx1 repo, waiting for Shaheen's approval. Clickable prototypes come before the real screens.
