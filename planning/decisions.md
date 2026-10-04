@@ -419,3 +419,29 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - If no transfer is confirmed after 7 days, management is warned by email. That's one warning, sent to `CX_MANAGEMENT_EMAIL`, by default `support@connectx1.com`.
   - After 14 days the checkout is frozen and the address released. A transfer that arrives later is handled by management (refund, or a new checkout).
   - The daily job is `follow-up-transfers`.
+
+## D-048 — Connect X1 prices in USD terms and a pricing dashboard for management (2026-10-04, requested by Shaheen; amends D-047)
+- **USD is the base for every rate:**
+  - The BHD list (D-027) stays the master. It is converted to USD at the 0.376 peg, then to each billing currency, and rounded to a clean step.
+  - Billing currencies:
+    - Bahrain: BHD
+    - Saudi Arabia: SAR
+    - UAE: AED
+    - Oman: OMR
+    - Kuwait: KWD
+    - **Egypt and Libya: USD.** There are no EGP or LYD price lists, and transfers from those countries are made in USD.
+  - Local methods that charge only in EGP or LYD (Meeza, Egyptian wallets, InstaPay, Moamalat) stay unavailable until a provider can charge them in USD.
+- **Pricing dashboard** (`/admin/pricing`, for Pioneers staff only):
+  - Staff draft price lists per currency, from a USD rate or edited by hand.
+  - Staff draft offers per country: a first-year discount of 0–60%, 0–3 free months on yearly payment, a label and an optional end date.
+  - **A Pioneers manager approves.** Drafts are never used, and approved versions can't be edited; a change is a new version.
+  - Until a currency has an approved list, its countries are billed in BHD.
+  - Without an offer, there is no discount and yearly payment gets 2 free months.
+- **Existing customers keep their prices:** each subscription records the list and offer it was sold on.
+- **Who has access:**
+  - Pioneers staff use two-factor login.
+  - Staff roles are set only by the `platform-role` job, never through the app.
+  - A company owner can't be Pioneers staff (D-024), so Shaheen needs a separate staff account.
+  - Every draft, edit and approval is audited.
+- **Receiving accounts (D-047):** the USD account details go in `CX_BANK_DETAILS_USD`, an environment secret set by Shaheen.
+- **Starting drafts:** `phase-3/local-prices-proposal.md` in the connectx1 repo.
