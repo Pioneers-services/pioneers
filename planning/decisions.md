@@ -497,3 +497,15 @@ All of these run on the D-044 connection layer and are offered through the Add-o
     - whether these models are available to us in Mumbai, and whether requests may be processed in other regions;
     - quality on the Carminta benchmark, including Arabic documents;
     - for GPT, a provider that doesn't train on or keep customer data (D-024).
+
+## D-051 — Carminta's model choice: Asia-Pacific routing, cheapest capable model per tier (2026-10-04, decided by Shaheen; amends D-050, shapes Q13)
+- **Routing:** Asia-Pacific cross-region processing on Bedrock is approved. Requests start in Mumbai and may run in other AWS Asia-Pacific regions. This is needed because Amazon Nova is only available in Mumbai through that route.
+- **What every tier must handle:** Arabic and English; documents (PDF) and photos; calculations; arranging tasks; building tables; carrying out actions; and knowing Connect X1 and the customer's business.
+  - **Calculations** (totals, VAT, measurements, prices) are done by Connect X1 code that Carminta calls, never by the model's own arithmetic.
+  - **Actions** go through Carminta's tools, using the user's own permissions and the approve-then-confirm step.
+  - **Knowledge** of Connect X1 and the customer comes from the product knowledge base and the tenant's own data, through tools. Nothing is trained into the model.
+- **Rule: use the cheapest model in each tier that passes the Carminta benchmark.**
+  - **Included tier:** Amazon **Nova Lite**, which reads images and PDFs and calls tools. **Nova Micro** (text only) handles short routing and classification jobs. **Nova Pro** is the fallback if Nova Lite fails the Arabic document tests.
+  - **Claude add-on:** **Claude Haiku 4.5**, the cheapest current Claude. It runs on the India-only route, which is stricter than Asia-Pacific.
+  - **GPT add-on:** the cheapest current GPT on Bedrock that reads images and documents. It's chosen after a price and feature check. On Bedrock these models run only on the **Global** route, so the add-on's terms must tell the customer their requests may be processed outside Asia-Pacific. No direct OpenAI or Azure contract is needed (D-024).
+- **Gate:** none of this is final until the benchmark runs. That waits on AWS raising the account's daily token quota (support case opened 2026-10-03).
