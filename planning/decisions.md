@@ -445,3 +445,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - Every draft, edit and approval is audited.
 - **Receiving accounts (D-047):** the USD account details go in `CX_BANK_DETAILS_USD`, an environment secret set by Shaheen.
 - **Starting drafts:** `phase-3/local-prices-proposal.md` in the connectx1 repo.
+- **Amended 2026-10-04 (Shaheen):**
+  - Prices are set per country, not per currency.
+  - One **USD main list** is edited directly.
+  - Each country's list is worked out from the main list at its rate and can then be edited. Egypt and Libya each have their own USD list.
+  - Drafts can be edited, recalculated or deleted. Editing an approved version starts a new draft.
+  - A manager can end an approved offer early. Customers who already have it keep it.
