@@ -551,3 +551,24 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - Tax invoices always keep the fields the tax authority requires.
 - **Home is a dashboard for each user**, by role.
 - **Design:** `phase-4/screens.md` in the connectx1 repo, waiting for Shaheen's approval. Clickable prototypes come before the real screens.
+
+## D-055 — Connect X1 phase 4 screen design approved; numbering settings and a unified job number (2026-10-05, approved by Shaheen; completes D-054)
+- **Approved:** the screen design in `phase-4/screens.md` in the connectx1 repo:
+  - the numbered workflow steps 1–9;
+  - who can edit or delete after each step. This follows AKA v5.3: the owner of a record edits it, and a delete needs a request with a reason plus a second person's approval. It's made stricter in three ways:
+    - nothing is erased: deleted records go to a Bin the Owner can restore from;
+    - tax documents are never edited or deleted;
+    - approval locks a record.
+  - the page frame, the home dashboard for each user, the handover, and the letterheads (D-054).
+- **Numbering is editable for each company** by the Owner or Admin, for every document type:
+  - prefix, year part, digits, separator, restart, next number and an optional branch code;
+  - a change applies to the next number only, needs the owner's approval, and is audited;
+  - tax series (SI, CN, RV) change only before their first document or from 1 January.
+- **Default format:** `PREFIX-YY-NNNN`, made on the server.
+  - Tax documents get their number only when issued, with no gaps.
+  - Quotations keep one number with revisions R1, R2….
+  - AKA's existing numbers are imported unchanged and continue from the highest.
+- **Unified job number: on by default, and a company setting.**
+  - One job number from the enquiry onwards is shared by the enquiry, site visits, estimates, quotation, order and project (SE, MS, ES, QT, SO, PJ).
+  - Leads, tax invoices, receipts, credit notes and purchasing documents keep their own series, and show the job number.
+- **Branches** (section 15b of the design) are added and wait for Shaheen's answers on numbering and visibility. A tax invoice series follows the legal entity unless the accountant confirms otherwise (Q14).
