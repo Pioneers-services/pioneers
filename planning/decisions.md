@@ -333,3 +333,22 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
 
 - **Consequence for the plan:** the Saudi and Egyptian packs are integration projects. They aren't a settings change, and they need their own scope and schedule before those customers can go live (the D-031 plan has other countries' tax packs in Wave 3).
 - **VAT numbers:** Bahrain's format (15 digits) is enforced. The other countries' formats are verified when their packs are built. No VAT number is accepted in Kuwait or Libya.
+
+## D-044 — Connect X1 integrations: one connection layer, four priority integrations (2026-10-04, approved by Shaheen)
+- **One connection layer, built by Pioneers**, so every integration has the same safeguards:
+  - each company's credentials encrypted;
+  - an outbox with safe retries;
+  - a sync log in the audit trail;
+  - the same permission checks as the screens (Carminta can't use a connection to get around them);
+  - the core keeps working when an outside service is down.
+- **Priority integrations, all four chosen by Shaheen, in this order:**
+  1. **Government e-invoicing.** ZATCA (Saudi Arabia) and ETA (Egypt), then Oman from April 2027. Each completes that country's tax pack (D-043) and must be live before that country's first customer goes live.
+  2. **Bank statements.** Import from Bahrain banks in phase 5; payment matching and reconciliation in phase 7.
+  3. **WhatsApp Business.** Quotations, invoices, reminders and approval links, in phases 5–6. This moves A4 earlier than Wave 2.
+  4. **Open API and webhooks.** Per-company scoped keys and event webhooks, in phase 6.
+- **The connection layer itself comes first, in phase 4.**
+- **Outside steps needed from Pioneers or the pilots:**
+  - a WhatsApp Business account with Meta verification;
+  - sample statement formats from the pilots' banks;
+  - ZATCA and ETA onboarding for each company in those countries.
+- **Schedule:** the 18-week plan (D-031) stays. If a phase slips, the accounting reports slip first, and tax-invoice correctness never slips.
