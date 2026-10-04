@@ -522,3 +522,13 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - At about $0.01 per request, that's about $9 of cost against $13.26 of revenue: about 32% margin, breaking even near 1,300 requests.
 - **GPT add-on:** its price waits for the GPT price on Bedrock.
 - **All costs are estimates** until the Carminta bench measures real tokens per request. Revisit them after it runs.
+
+## D-053 — Connect X1 Sales rules: units, ballpark range and quotation approvers (2026-10-04, decided by Shaheen; completes the D-050 Sales design; resolves Q2 for quotations)
+- **Units:**
+  - All dimensions are entered and stored **in millimetres**.
+  - Areas and running metres are worked out from them: m² = mm × mm ÷ 1,000,000, and RM = mm ÷ 1,000.
+- **Ballpark range for leads:** set **per company** as a company setting. The default is −15% / +25%, as in AKA v5.3.
+- **Who approves a quotation:**
+  - **The owner marks it** in the company's rules: which roles may approve quotations, each with an optional amount limit. For example, manager up to BHD 5,000 and owner with no limit.
+  - A quotation over a person's limit goes to someone whose limit covers it.
+  - Every approval is recorded with who approved, when, and the amount.
