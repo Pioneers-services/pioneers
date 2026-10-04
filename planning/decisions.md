@@ -555,7 +555,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 ## D-055 — Connect X1 phase 4 screen design approved; numbering settings and a unified job number (2026-10-05, approved by Shaheen; completes D-054)
 - **Approved:** the screen design in `phase-4/screens.md` in the connectx1 repo:
   - the numbered workflow steps 1–9;
-  - who can edit or delete after each step. This follows AKA v5.3: the owner of a record edits it, and a delete needs a request with a reason plus a second person's approval. It's made stricter in three ways:
+  - who can edit or delete after each step:
+    - **editing:** anyone whose role has Sales access can edit any record they can see. View-only roles can't edit, and every change records who made it. Shaheen decided this on 2026-10-05, replacing AKA v5.3's rule that only the record's owner edits it;
+    - **deleting** follows AKA v5.3: a request with a reason plus a second person's approval. It's made stricter in three ways:
     - nothing is erased: deleted records go to a Bin the Owner can restore from;
     - tax documents are never edited or deleted;
     - approval locks a record.
