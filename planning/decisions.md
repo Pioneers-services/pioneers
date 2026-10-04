@@ -352,3 +352,21 @@ These answer `projects/connect-x1/open-questions.md` Q50–Q56.
   - sample statement formats from the pilots' banks;
   - ZATCA and ETA onboarding for each company in those countries.
 - **Schedule:** the 18-week plan (D-031) stays. If a phase slips, the accounting reports slip first, and tax-invoice correctness never slips.
+
+## D-045 — Connect X1 app and social integrations, extending D-044 (2026-10-04, approved by Shaheen)
+All of these run on the D-044 connection layer and are offered through the Add-on Store (D-022). Each company signs in to each app itself and can revoke access at any time.
+
+| Integration | What it does | When |
+|---|---|---|
+| Instagram and Facebook leads | Messages, comments and lead forms become leads in Sales, with the source recorded. Uses the same Meta Business account as WhatsApp; needs Meta app review | Phase 4 (Sales) |
+| Google and Microsoft calendar and email | Site visits, measurements and handovers in staff calendars; quotation emails logged on the customer | Phase 5 |
+| Cloud storage (Google Drive, OneDrive, Dropbox) | Link or import drawings and photos to a project | Phase 5 |
+| Design files: SketchUp, AutoCAD, 3ds Max | Stored and versioned in the drawings register, with previews from their exports (PDF, PNG, glTF) | Phase 5 |
+| Design files: DXF | Read for cutlists and quantities (A9) | Wave 2 |
+| Design files: DWG and SketchUp contents | Read the files directly. **Needs a licensed reading library or SketchUp's developer kit, which Shaheen approves before use** (the first outside component under the "built by Pioneers" rule) | Wave 3 |
+| Slack | Project, approval and finding notifications to the company's own channels | Wave 2 |
+| Notion | Project summaries and tasks synced to the company's workspace | Wave 2 |
+| Google Business Profile | Reviews and enquiries; Carminta suggests a review request after handover | Wave 2 |
+
+- **"And more":** further apps connect through the open API and webhooks (D-044). Customers can link other tools themselves, and Pioneers adds native connectors when several customers ask for the same app.
+- **Not planned:** posting to social media from Connect X1. An ERP isn't a posting tool.
