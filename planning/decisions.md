@@ -370,3 +370,31 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 
 - **"And more":** further apps connect through the open API and webhooks (D-044). Customers can link other tools themselves, and Pioneers adds native connectors when several customers ask for the same app.
 - **Not planned:** posting to social media from Connect X1. An ERP isn't a posting tool.
+
+## D-046 — Connect X1 subscription payment methods: cards plus each country's local methods (2026-10-04, approved by Shaheen; shapes Q31)
+- **Methods offered:** Visa and Mastercard in every country, plus each country's local methods, plus bank transfer everywhere.
+
+| Country | Local methods |
+|---|---|
+| Bahrain | BenefitPay, Apple Pay |
+| Saudi Arabia | mada, Apple Pay, STC Pay |
+| UAE | Apple Pay |
+| Oman | OmanNet |
+| Kuwait | KNET, Apple Pay |
+| Egypt | Meeza, mobile wallets, InstaPay (launching on Paymob) |
+| Libya | Moamalat Libyan cards |
+
+- **One payment adapter routes each method to a provider.** Candidates per method are listed in `api/src/payment-methods.ts`: Tap (BenefitPay and the GCC), Paymob (Egypt), MyFatoorah (KNET, OmanNet), Moamalat (Libya). The providers themselves are still to be chosen and contracted (Q31 stays open for that).
+- **Local methods charge only in local currency.** Subscriptions are billed in BHD until local prices exist (Q48), so:
+  - in Bahrain, all methods work;
+  - elsewhere, only cards and bank transfer work for now;
+  - mada, KNET, OmanNet, Meeza, wallets, InstaPay and Moamalat open when local prices are set.
+
+  **Q48 now blocks local methods outside Bahrain.**
+- **Bank transfer:**
+  - The payer quotes a short reference (CX-XXXXXXXX).
+  - Pioneers billing confirms the transfer, and the company is then set up through the same safeguards as card payments: amount and currency checked, address checked, once only.
+  - Pioneers' receiving bank details are set per environment (`CX_BANK_DETAILS`).
+- **Open for Shaheen:**
+  - **Merchant entity:** Pioneers invoices as an Egyptian company (D-028), and most GCC local methods need a local merchant account. Which entity holds each country's merchant account?
+  - **Bank-transfer address hold:** the address hold is 30 minutes (D-032), and a transfer can take days. Should a bank-transfer checkout hold the address longer?
