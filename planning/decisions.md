@@ -571,4 +571,7 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Unified job number: on by default, and a company setting.**
   - One job number from the enquiry onwards is shared by the enquiry, site visits, estimates, quotation, order and project (SE, MS, ES, QT, SO, PJ).
   - Leads, tax invoices, receipts, credit notes and purchasing documents keep their own series, and show the job number.
-- **Branches** (section 15b of the design) are added and wait for Shaheen's answers on numbering and visibility. A tax invoice series follows the legal entity unless the accountant confirms otherwise (Q14).
+- **Branches, decided by Shaheen on 2026-10-05:**
+  - **Numbering:** one series for the whole company, with the branch code in the number (`SE-MNM-26-0042`).
+  - **Visibility:** staff see only their own branch by default; managers and the owner see all branches.
+  - **Tax invoices:** the series follows the legal entity unless the accountant confirms otherwise (Q14).
