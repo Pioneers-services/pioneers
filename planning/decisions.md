@@ -451,3 +451,26 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - Each country's list is worked out from the main list at its rate and can then be edited. Egypt and Libya each have their own USD list.
   - Drafts can be edited, recalculated or deleted. Editing an approved version starts a new draft.
   - A manager can end an approved offer early. Customers who already have it keep it.
+
+## D-049 — Connect X1 phase 3 (setup journey and Carminta) complete; merged to main (2026-10-04, approved by Shaheen: "Merge")
+- **Merged:** PR Pioneers-services/connectx1#6. Audit in `phase-3/audit.md`.
+- **Exit gate met:** a test company is set up end to end with Carminta's guidance: checkout → payment → owner invitation → two-factor login → setup steps → live.
+- **In scope and done:**
+  - the public plans page and checkout (D-029, D-030, D-032);
+  - payment methods per country (D-046);
+  - bank transfer with its 7- and 14-day timeline (D-047);
+  - 7 launch countries with tax packs (D-043);
+  - versioned setup steps with owner approval;
+  - branding (D-034, D-042);
+  - Carminta as setup guide and document reader, with metering;
+  - the pricing dashboard (D-048).
+- **Verification:**
+  - 76/76 tests locally and on AWS RDS in Mumbai (image e335c8724141, migrations 003–012);
+  - the independent security review is fixed (`phase-3/security-review.md`).
+- **Still waiting on providers:**
+  - the payment provider (Q31): checkout uses a test provider and bank transfer;
+  - the AI model (Q13: Bedrock in Mumbai, waiting on AWS).
+- **Deferred:**
+  - the `cx_migrator` role (phase 8);
+  - putting the app online on AWS (load balancer, `api.connectx1.com`, web hosting), which gets its own cost approval.
+- **Next:** phase 4 (weeks 7–8), Sales: leads, customers, estimates/BOQ, quotations with revisions and approvals, branded PDFs.
