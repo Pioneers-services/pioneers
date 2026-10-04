@@ -474,3 +474,26 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - the `cx_migrator` role (phase 8);
   - putting the app online on AWS (load balancer, `api.connectx1.com`, web hosting), which gets its own cost approval.
 - **Next:** phase 4 (weeks 7–8), Sales: leads, customers, estimates/BOQ, quotations with revisions and approvals, branded PDFs.
+
+## D-050 — Connect X1 Sales design, hosting timing and Carminta's models (2026-10-04, decided by Shaheen)
+- **Lead and enquiry are different records:**
+  - A **lead** is blind: there has been no meeting yet and there are no specific items. Typical sources are a phone call, WhatsApp, a walk-in, social media or the website.
+  - An **enquiry** comes after the sales team has met the customer. They have the customer's details and know the project: the site, the items and the materials.
+  - A lead converts into an enquiry.
+  - This changes the single "Leads and customers" screen in the approved prototype (D-038).
+- **Estimates are priced from measurements and dimensions**, using the AKA v5.3 estimator as the reference:
+  - each company has its own versioned rate card, approved by the owner;
+  - each product type has a measurement rule: running metre, wall area for straight, L and U shapes, floor area, per unit or per set;
+  - option axes (such as collection, door style and height band) select the rate;
+  - add-ons are priced per unit.
+  - BOQ lines stay available for fit-out contractors.
+  - AKA's v5.3 prices become AKA's data, not code (D-014).
+  - Leads can get a quick ballpark range.
+- **Putting the app online on AWS** (load balancer, `api.connectx1.com`, web hosting) waits until the first release is built. It happens at the start of phase 8 (hardening), after an itemised cost approval. Until then, testing is local and through AWS jobs.
+- **Carminta's models (shapes Q13; amends the plan of Claude Haiku and Sonnet):**
+  - **Included in every subscription (D-023):** Amazon's own low-cost models on Bedrock run Carminta and all internal tasks.
+  - **Premium models are paid add-ons in the Store, under "Carminta models":** Claude and GPT, at an additional fee, metered per company.
+  - **To check before building:**
+    - whether these models are available to us in Mumbai, and whether requests may be processed in other regions;
+    - quality on the Carminta benchmark, including Arabic documents;
+    - for GPT, a provider that doesn't train on or keep customer data (D-024).
