@@ -398,3 +398,24 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Open for Shaheen:**
   - **Merchant entity:** Pioneers invoices as an Egyptian company (D-028), and most GCC local methods need a local merchant account. Which entity holds each country's merchant account?
   - **Bank-transfer address hold:** the address hold is 30 minutes (D-032), and a transfer can take days. Should a bank-transfer checkout hold the address longer?
+
+## D-047 — Connect X1 local prices, receiving accounts and bank-transfer timeline (2026-10-04, approved by Shaheen; amends D-032; resolves the approach for Q48)
+- **Local prices (Q48 approach):**
+  - Each launch currency gets a fixed price list: the BHD list (D-027) converted at a reference rate and rounded to clean amounts.
+  - The BHD 8 per-seat floor (D-028) is converted the same way and rounded up.
+  - Lists are reviewed every quarter.
+  - **A list is used only after Shaheen approves its numbers.** The proposal is `phase-3/local-prices-proposal.md` in the connectx1 repo.
+  - Until a list is approved, that country is charged in BHD.
+  - Once approved, the country's local payment methods open (D-046).
+- **Receiving accounts, for now:**
+  - Shaheen's personal bank account in Bahrain (for BHD) and his personal account in Egypt (for EGP) receive bank transfers.
+  - A Pioneers branch in Bahrain may follow and would take over.
+  - The account details are stored as environment secrets (`CX_BANK_DETAILS_BHD`, `CX_BANK_DETAILS_EGP`), never in Git or chat.
+  - **Risks noted:**
+    - Card and local-method gateways generally require a registered business, so online methods wait for a business entity.
+    - Company income received into personal accounts has tax and record-keeping consequences in Bahrain and Egypt, which the accountant should review.
+- **Bank-transfer timeline** (amends D-032's 30-minute hold for bank transfers only):
+  - The address is held for 7 days.
+  - If no transfer is confirmed after 7 days, management is warned by email. That's one warning, sent to `CX_MANAGEMENT_EMAIL`, by default `support@connectx1.com`.
+  - After 14 days the checkout is frozen and the address released. A transfer that arrives later is handled by management (refund, or a new checkout).
+  - The daily job is `follow-up-transfers`.
