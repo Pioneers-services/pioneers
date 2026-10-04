@@ -509,3 +509,15 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - **Claude add-on:** **Claude Haiku 4.5**, the cheapest current Claude. It runs on the India-only route, which is stricter than Asia-Pacific.
   - **GPT add-on:** the cheapest current GPT on Bedrock that reads images and documents. It's chosen after a price and feature check. On Bedrock these models run only on the **Global** route, so the add-on's terms must tell the customer their requests may be processed outside Asia-Pacific. No direct OpenAI or Azure contract is needed (D-024).
 - **Gate:** none of this is final until the benchmark runs. That waits on AWS raising the account's daily token quota (support case opened 2026-10-03).
+
+## D-052 — Carminta usage allowances and add-on pricing (2026-10-04, decided by Shaheen, relayed by the business-transformation session; amends D-027's 300-request placeholder; metering per D-028)
+- **Included tier (Nova Lite, D-051):**
+  - **1,000 Carminta requests per user per month**, free in every subscription and pooled per company (Shaheen: "1000 is fair").
+  - Paid extra packs are only for heavier use.
+  - Estimated cost is about $0.0007 per request, so about $0.70 per user per month.
+  - Unchanged: D-028's uncounted first days, the warning at 80%, and Carminta never stops without warning.
+- **Claude add-on (Haiku 4.5): price proposed by Shaheen, not final:**
+  - **BHD 5 per month for every 5 users.**
+  - The allowance is **not decided yet**. The recommendation is 900 premium requests per 5 users per month, about 8 per user per working day. At about $0.01 per request, that's about $9 of cost against $13.26 of revenue: about 32% margin, breaking even near 1,300 requests.
+- **GPT add-on:** its price waits for the GPT price on Bedrock.
+- **All costs are estimates** until the Carminta bench measures real tokens per request. Revisit them after it runs.
