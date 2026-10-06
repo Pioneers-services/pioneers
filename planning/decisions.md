@@ -570,6 +570,11 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - Tax documents get their number only when issued, with no gaps.
   - Quotations keep one number with revisions R1, R2….
   - AKA's existing numbers are imported unchanged and continue from the highest.
+- **Everything stays editable (Shaheen, 2026-10-06):** anyone with Sales access can correct any sales record at any stage.
+  - Editing a sent or accepted quotation automatically makes the next revision, and the old one stays readable.
+  - A completed site visit can be corrected, with a reason.
+  - The only hard lock is an issued tax invoice or credit note, which is corrected with a credit note.
+  - This replaces "approval locks a record".
 - **Unified job number: on by default, and a company setting.**
   - One job number from the enquiry onwards is shared by the enquiry, site visits, estimates, quotation, order and project (SE, MS, ES, QT, SO, PJ).
   - Leads, tax invoices, receipts, credit notes and purchasing documents keep their own series, and show the job number.
