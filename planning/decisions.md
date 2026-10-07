@@ -582,3 +582,16 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - **Numbering:** one series for the whole company, with the branch code in the number (`SE-MNM-26-0042`).
   - **Visibility:** staff see only their own branch by default; managers and the owner see all branches.
   - **Tax invoices:** the series follows the legal entity unless the accountant confirms otherwise (Q14).
+
+## D-056 — Connect X1 menus by role, private costs, invoices in Sales, direct quotations, projects by department (2026-10-07, decided by Shaheen after reviewing the prototype; follows AKA v5.3)
+- **Menus by role:** each role sees its own menu: sales, sales manager, accountant, project and production manager, view only, and owner. This follows AKA v5.3's per-role menus.
+- **Leads and customers are separate.** Enquiries and quotations can start **without a lead**, as in AKA v5.3, where a quotation links to an enquiry only if one exists. A direct quotation creates its enquiry and job number automatically.
+- **Invoices are in Sales.** The accountant has full access to quotations, invoices and payments. Issued tax invoices are corrected only with credit notes.
+- **Costs and margins are private to the Owner and the accountant.** Staff see selling prices only. This follows AKA v5.3, where only admin, owner and IT see costs.
+- **Projects:**
+  - A project opens when the advance invoice is issued.
+  - Each department works in its own tab: Sales handover, Design, Production, Purchasing, Finance.
+  - Production and purchasing see quantities, never prices or profit.
+  - The project manager accepts the handover against a checklist.
+- **Every list page starts with a summary of counts and money.**
+- **Design:** section 0b of `phase-4/screens.md`. The prototype is `prototype/sales.html`.
