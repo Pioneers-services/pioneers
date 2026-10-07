@@ -621,3 +621,36 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - the change history.
 - **Editing an issued tax invoice:** Connect X1 issues the credit note and the corrected invoice in one step, moving payments across. This keeps it compliant without making the user handle the credit note separately.
 - **Design:** section 0c of `phase-4/screens.md`. The prototype is `prototype/sales.html`.
+
+## D-058 — Connect X1: enquiry versus quotation, products dashboard with shapes, customer entered once, measurement timeline, pro-forma and receipts, bilingual letterheads on every document (2026-10-07, decided by Shaheen after reviewing the prototype)
+- **The enquiry holds the requirements and has no prices.** It covers rooms, products, types, shapes, materials, specifications, measurements and files. **The quotation prices it.**
+  - Both carry the same job number.
+  - A quotation made without an enquiry opens a job on the spot and takes that job's number. So do the measurement file, the pro-forma (with a suffix) and the project.
+- **Products dashboard** with categories, types, shapes, materials, specifications, descriptions and the room list.
+  - Kitchens: straight, L, U, G, parallel or with an island.
+  - Wardrobes: straight, L, U or walk-in.
+  - Enquiry items are picked from these lists.
+- **A customer is entered once and read live everywhere.** Search works as you type and includes open leads.
+  - Exception: an issued tax invoice keeps the details it was issued with. Changing them goes through a credit note.
+- **Full pages:** new lead, new enquiry, new quotation, and editing requirements. No descriptions under page titles.
+- **Leads:**
+  - No update for 30 days: the owner is asked for one.
+  - 45 days: the lead moves to Pending, an archive kept off the active list.
+- **Measurements belong to the measurement department.** Sales only request them; the department arranges the date with the customer.
+  - One file per job, as a timeline: initial measurement, then power and plumbing points, then final measurement.
+  - Each visit has its own date, person, notes, and photos and PDFs.
+- **Invoices:**
+  - Pro-forma, tax invoice, credit note and receipt, listed by month.
+  - Payment on a pro-forma issues the tax invoice and the receipt together, because VAT is due on receipt.
+  - Receipts have their own series.
+  - Payments received show the salesperson and branch.
+- **Project page:**
+  - key figures, and planned and actual dates;
+  - team, documents and the readiness checklist.
+  The project manager marks each milestone.
+- **Targets setup** (owner and sales manager): yearly grid, activity targets, what counts as achieved, and commission tiers.
+- **Letterheads apply to every document:** English, Arabic (right to left), or Arabic right and English left on the same page.
+  - 6 styles.
+  - Company names in both languages, fonts, colours, stamp and signatory.
+  - QR code and bank details on tax documents.
+- **Design:** section 0d of `phase-4/screens.md`. The prototype is `prototype/sales.html` (commit 45049dc).
