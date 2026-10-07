@@ -595,3 +595,29 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - The project manager accepts the handover against a checklist.
 - **Every list page starts with a summary of counts and money.**
 - **Design:** section 0b of `phase-4/screens.md`. The prototype is `prototype/sales.html`.
+
+## D-057 — Connect X1 full quotation and enquiry pages, site visits in Operations, targets, reports, pricing system, invoice amendment (2026-10-07, decided by Shaheen after reviewing the prototype; follows AKA v5.3)
+- **Quotation page:** a full builder like AKA v5.3's quotation builder.
+  - Customer and project details, a description, and a validity period.
+  - Lines priced from the pricing system or entered by hand.
+  - Line and overall discounts, VAT, round-off and a VAT calculator.
+  - A payment schedule, notes for the customer and internal notes, terms templates and exclusions.
+  - Revisions, history and the PDF preview.
+- **New enquiry and new quotation are full pages** with AKA's enquiry fields: customer, project, items with options and mm dimensions, a site-visit request, attachments and notes.
+- **Site visits are part of Operations:**
+  - Sales request them from the enquiry.
+  - The measurement team books and completes them.
+  - Each visit produces a measurement sheet PDF.
+- **Designers are users** with the Designer role. They're chosen from a list, or entered as an external designer.
+- **Every list has search, filters and export.** Reports include a pivot table.
+- **Sales targets:** monthly, per salesperson, measured on money received before VAT, as in AKA v5.3.
+- **"Pricing system" replaces "rate card":**
+  - products, options and prices;
+  - add-ons;
+  - the quick estimator;
+  - discount and approval limits;
+  - terms templates;
+  - a calculator;
+  - the change history.
+- **Editing an issued tax invoice:** Connect X1 issues the credit note and the corrected invoice in one step, moving payments across. This keeps it compliant without making the user handle the credit note separately.
+- **Design:** section 0c of `phase-4/screens.md`. The prototype is `prototype/sales.html`.
