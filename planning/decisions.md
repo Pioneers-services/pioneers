@@ -654,3 +654,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - Company names in both languages, fonts, colours, stamp and signatory.
   - QR code and bank details on tax documents.
 - **Design:** section 0d of `phase-4/screens.md`. The prototype is `prototype/sales.html` (commit 45049dc).
+- **Follow-up (2026-10-08, Shaheen):**
+  - No payment schedule on quotations.
+  - "Estimated value" replaces "Ballpark".
+  - The project timeline follows AKA v5.3's order, with an owner per step: design drawings, final measurement, design updated, production drawings, customer signature, production, quality check, delivery, installation, handover, snags.
+  - "Payments" replaces "Money".
+  - Bilingual documents put English on the left and Arabic on the right of every line.
