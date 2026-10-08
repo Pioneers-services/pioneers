@@ -664,3 +664,7 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - an Action Center with the decisions waiting for each role, acted on in place;
   - an Intelligence Center with analysis and "Carminta noticed";
   - an Owner dashboard with branches, departments and team activity.
+- **Archive and paging (2026-10-08, Shaheen):**
+  - Every list has Active, Archive and All.
+  - Closed records move to the archive automatically, on rules the owner sets in Setup. They are never deleted, and they stay searchable.
+  - Lists are paged (25, 50 or 100 rows) and sortable.
