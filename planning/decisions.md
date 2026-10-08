@@ -660,3 +660,7 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - The project timeline follows AKA v5.3's order, with an owner per step: design drawings, final measurement, design updated, production drawings, customer signature, production, quality check, delivery, installation, handover, snags.
   - "Payments" replaces "Money".
   - Bilingual documents put English on the left and Arabic on the right of every line.
+- **Management centres (2026-10-08, Shaheen), as in AKA v5.3:**
+  - an Action Center with the decisions waiting for each role, acted on in place;
+  - an Intelligence Center with analysis and "Carminta noticed";
+  - an Owner dashboard with branches, departments and team activity.
