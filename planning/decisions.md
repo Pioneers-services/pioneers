@@ -671,3 +671,4 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Sales sketch and editable shapes (2026-10-08, Shaheen):**
   - Sales draw a draft plan on the enquiry. It goes to the measurement department and is printed on the measurement sheet.
   - Shapes can be added and edited in the products dashboard, using the same drawing pad.
+  - Sketches carry site photos (pinned to a spot, with notes) and labels in English, Arabic or both. There is no tracing over a photo of a hand sketch.
