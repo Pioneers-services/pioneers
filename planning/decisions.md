@@ -673,3 +673,28 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - Shapes can be added and edited in the products dashboard, using the same drawing pad.
   - Sketches carry site photos (pinned to a spot, with notes) and labels in English, Arabic or both. There is no tracing over a photo of a hand sketch.
   - **Correction (2026-10-09, Shaheen):** the sketch is a Sales tool for showing the customer a first idea. It is not sent to measurement and not printed on the measurement sheet. The measurement department uploads its own site photos and PDFs on each visit, and Sales can see them.
+
+## D-059 — Connect X1: one job, one timeline, one owner per step (2026-10-09, decided by Shaheen after finding conflicts in the workflow)
+- **Every job follows one 15-step timeline**, worked out from its records and shown the same way on every page of the job:
+  1. lead;
+  2. enquiry and requirements;
+  3. initial measurement;
+  4. concept design (optional);
+  5. quotation;
+  6. client decision;
+  7. deposit paid;
+  8. project opened;
+  9. final measurement;
+  10. final design and production drawings;
+  11. drawings signed by the customer;
+  12. production and quality check;
+  13. delivery and installation;
+  14. handover and final invoice;
+  15. snags and warranty.
+- **Each step has one owner.** Only the owner gets the button to move it on, and Home lists each person's next steps.
+- **Concept design** comes before the quotation; detailed design comes after the deposit.
+- **The project opens when the deposit is paid**, not when an invoice or pro-forma is issued.
+- **Invoices:** Sales and Accounts both issue invoices, pro-formas and receipts.
+- **Every quotation goes through an enquiry.** A direct quotation starts as a short enquiry.
+- **Removed:** the separate Estimates page, the "Step x of 9" counters and the enquiry's own stage bar.
+- **Design:** section 0e of `phase-4/screens.md`. The prototype is commit e027c93.
