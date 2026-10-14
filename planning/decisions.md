@@ -715,3 +715,10 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Planned domain: tablyx5.com**, the same pattern as connectx1.com. It was available on 2026-10-14 for $11.25 a year (Vercel registrar price). **Not bought yet**: buying needs Shaheen's approval.
 - **Check before buying:** tably.com is registered to someone else. Run a trademark and conflict check for "Tably" in restaurant and ordering software in Egypt, Bahrain and the GCC. If there's a conflict, the fallback is Sufra X5 (sufrax5.com, also available).
 - Session folder renamed to `~/Pioneers/projects/tably-x5/`.
+
+## D-062 — Tably X5: payments to the venue, cash/machine by staff, invoice per order, rollout in stages (2026-10-14, decided by Shaheen)
+- **Payments go to the venue** (confirms D-060 decision 3): each venue connects its own gateway account. No platform account at Pioneers.
+- **Cash and card machine** are allowed when the venue asks for them. The waiter takes the payment at the table and confirms it in the staff account; only then does the order reach the kitchen. Every confirmation records the staff account.
+- **The system creates an invoice or receipt for every order.** Each venue switches VAT and extra charges (such as service charge) on or off in its own settings.
+- **Rollout:** stage 1 Egypt and Bahrain; stage 2 Oman and Kuwait; stage 3 KSA. Work covers stage 1 first, then stage 2 is added.
+- Work files: `~/Pioneers/projects/tably-x5/` (research.md, open-questions.md, architecture-map.html). Trademark clearance for "Tably" is still open; domain not bought.
