@@ -698,3 +698,14 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Every quotation goes through an enquiry.** A direct quotation starts as a short enquiry.
 - **Removed:** the separate Estimates page, the "Step x of 9" counters and the enquiry's own stage bar.
 - **Design:** section 0e of `phase-4/screens.md`. The prototype is commit e027c93.
+
+## D-060 — New Pioneers product: QR ordering SaaS for restaurants and coffee shops, with Carminta X5 (2026-10-14, decided by Shaheen)
+- **What it is:** diners scan the venue's QR code, open the menu in the browser, order, **type their table number**, pay, and follow their order. The venue sees live orders, table numbers, payment and preparation status, and table status on a dashboard. The owner registers and sets up the menu (items with photo, description and price; categories; logo) alone. **Carminta X5** is the owner's assistant. Sold as an **annual subscription**.
+- **Rules:**
+  - **one QR code per venue**; the table number is entered by the diner;
+  - **pay first**: an order reaches the kitchen only after payment, which also blocks fake orders;
+  - diners' payments go **to the venue's own payment gateway account, never through Pioneers**; Pioneers only bills the subscription;
+  - **no bill splitting**: whoever orders pays for that order;
+  - one product for restaurants and coffee shops; the owner chooses restaurant, coffee shop or both.
+- **Markets:** Egypt, Bahrain and the GCC. The owner chooses the country at setup, which sets currency, VAT and the payment gateways offered.
+- **Next:** R&D (competitors, per-country gateways that connect a venue's own merchant account, tax and e-receipt rules), then an architecture map (D-020), then an MVP, timeline and price proposal. No build before Shaheen approves. Session folder: `~/Pioneers/projects/restaurant-qr/` (name still to choose).
