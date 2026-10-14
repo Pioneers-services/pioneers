@@ -722,3 +722,8 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **The system creates an invoice or receipt for every order.** Each venue switches VAT and extra charges (such as service charge) on or off in its own settings.
 - **Rollout:** stage 1 Egypt and Bahrain; stage 2 Oman and Kuwait; stage 3 KSA. Work covers stage 1 first, then stage 2 is added.
 - Work files: `~/Pioneers/projects/tably-x5/` (research.md, open-questions.md, architecture-map.html). Trademark clearance for "Tably" is still open; domain not bought.
+
+## D-063 — QR ordering product: working name Carminta X5 until the trademark check is done (2026-10-15, decided by Shaheen)
+- **Working name: Carminta X5**, used in all files and talks until a trademark agent clears a final name. It replaces Tably X5 (D-061) for now because an existing product called Tably (usetably.com, Austria) sells in the same field.
+- **The owner's assistant keeps the name Carminta X5 too.** Docs and maps must say "the assistant" when they mean the assistant.
+- **Trademark check:** agent brief covers Carminta X5, Tably X5, Dishly X5 and Zaika X5 (`~/Pioneers/projects/tably-x5/trademark-check.md`). Sufra X5, Scanly, Qrave and Menuvo (too close to Menuova) are dropped. Nothing bought; carmintax5.com and carminta.com were free on 2026-10-15.
