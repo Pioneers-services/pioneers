@@ -708,4 +708,10 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - **no bill splitting**: whoever orders pays for that order;
   - one product for restaurants and coffee shops; the owner chooses restaurant, coffee shop or both.
 - **Markets:** Egypt, Bahrain and the GCC. The owner chooses the country at setup, which sets currency, VAT and the payment gateways offered.
-- **Next:** R&D (competitors, per-country gateways that connect a venue's own merchant account, tax and e-receipt rules), then an architecture map (D-020), then an MVP, timeline and price proposal. No build before Shaheen approves. Session folder: `~/Pioneers/projects/restaurant-qr/` (name still to choose).
+- **Next:** R&D (competitors, per-country gateways that connect a venue's own merchant account, tax and e-receipt rules), then an architecture map (D-020), then an MVP, timeline and price proposal. No build before Shaheen approves. Session folder: `~/Pioneers/projects/restaurant-qr/` (renamed by D-061).
+
+## D-061 — The QR ordering product is named Tably X5 (2026-10-14, chosen by Shaheen; names the D-060 product)
+- **Name: Tably X5.** It follows the family pattern (Connect X1, Servio X3; assistant Carminta X5).
+- **Planned domain: tablyx5.com**, the same pattern as connectx1.com. It was available on 2026-10-14 for $11.25 a year (Vercel registrar price). **Not bought yet**: buying needs Shaheen's approval.
+- **Check before buying:** tably.com is registered to someone else. Run a trademark and conflict check for "Tably" in restaurant and ordering software in Egypt, Bahrain and the GCC. If there's a conflict, the fallback is Sufra X5 (sufrax5.com, also available).
+- Session folder renamed to `~/Pioneers/projects/tably-x5/`.
