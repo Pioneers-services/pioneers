@@ -739,3 +739,15 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - **Ongoing services:** care plans (Basic, Standard, Priority) with response times; domains, email and hosting passed through with a margin.
 - **Markets:** Egypt, Bahrain and the GCC, each priced separately in local currency, not converted automatically. Plus payment terms, quote validity, discount limits with approvers, and VAT per country, which an accountant must confirm (Pioneers invoices as an Egyptian company, D-028).
 - **Project:** `~/Pioneers/projects/pioneers-pricing/` (private repo Pioneers-services/pioneers-pricing). The first-pass market research is in `research.md`.
+
+## D-065 — Pioneers price list: base landing page (2026-10-18, decided by Shaheen; first price under D-064)
+- **Included:**
+  - 1 page with up to 6 sections (introduction, services, about, gallery, contact);
+  - one language;
+  - a contact form plus a WhatsApp button;
+  - mobile-friendly design;
+  - domain and hosting for the first year.
+  Everything else is an add-on.
+- **Delivery:** about 1 month. **Cost:** about EGP 10,000.
+- **Prices:** **Egypt EGP 15,000. Bahrain BHD 300. Saudi Arabia SAR 3,500.** UAE, Kuwait, Qatar and Oman are not set yet.
+- Details in `pioneers-pricing/price-list.md`.
