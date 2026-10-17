@@ -751,3 +751,18 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Delivery:** about 1 month. **Cost:** about EGP 10,000.
 - **Prices:** **Egypt EGP 15,000. Bahrain BHD 300. Saudi Arabia SAR 3,500.** UAE, Kuwait, Qatar and Oman are not set yet.
 - Details in `pioneers-pricing/price-list.md`.
+
+## D-066 — Website add-on prices, and the editable Pioneers Price Book (2026-10-18, approved by Shaheen; follows D-065)
+- **Website add-ons (EGP / BHD / SAR):**
+  - extra section 1,500 / 30 / 350;
+  - extra page 3,000 / 60 / 700;
+  - second language 5,000 / 100 / 1,200;
+  - booking or quote form 3,000 / 60 / 700;
+  - blog or news with admin 6,000 / 120 / 1,400;
+  - basic SEO 3,000 / 60 / 700;
+  - Google Maps and analytics 1,500 / 30 / 350;
+  - simple logo and colours 5,000 / 100 / 1,200;
+  - installable web app (PWA) 4,000 / 80 / 950;
+  - training session 1,000 / 20 / 250.
+- **The pricing system is editable:** the Pioneers Price Book (https://claude.ai/artifact/3rUKL4B3XqtBpkF7zEhSxw) holds every line's base and add-ons per market and builds quotes. Only the owner and Editors can change prices; others see them read-only. It is the source of truth; `pioneers-pricing/price-list.md` is a snapshot.
+- More add-ons and the other lines (stores, custom systems, ongoing services, training and migration) are still to be priced.
