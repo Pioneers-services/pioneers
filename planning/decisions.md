@@ -727,3 +727,15 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Working name: Carminta X5**, used in all files and talks until a trademark agent clears a final name. It replaces Tably X5 (D-061) for now because an existing product called Tably (usetably.com, Austria) sells in the same field.
 - **The owner's assistant keeps the name Carminta X5 too.** Docs and maps must say "the assistant" when they mean the assistant.
 - **Trademark check:** agent brief covers Carminta X5, Tably X5, Dishly X5 and Zaika X5 (`~/Pioneers/projects/tably-x5/trademark-check.md`). Sufra X5, Scanly, Qrave and Menuvo (too close to Menuova) are dropped. Nothing bought; carmintax5.com and carminta.com were free on 2026-10-15.
+
+## D-064 — Pioneers pricing system: one cost model, a strategy for each service line, prices per market (2026-10-17, approved by Shaheen)
+- **Scope:** one pricing system for all Pioneers work: websites, online stores, custom systems, ongoing services, and the SaaS products. Two outputs: a price list, and a quote calculator built on the same data.
+- **One internal cost model under everything:** day rates by role, overheads, target margin and a floor price per line. No public price may fall below it.
+- **Each line has its own strategy:**
+  - **SaaS:** each product keeps its own decided model (Connect X1: D-027, D-028, D-052); the price list links to it.
+  - **Websites:** fixed packages plus add-ons, then a care plan.
+  - **Online stores:** tiers by catalogue size and integrations, with our own stack and Shopify priced separately, then a monthly care plan.
+  - **Custom systems:** a paid discovery phase at a fixed fee, then modules × complexity × day rate, billed by milestones; change requests at the day rate.
+  - **Ongoing services:** care plans (Basic, Standard, Priority) with response times; domains, email and hosting passed through with a margin.
+- **Markets:** Egypt, Bahrain and the GCC, each priced separately in local currency, not converted automatically. Plus payment terms, quote validity, discount limits with approvers, and VAT per country, which an accountant must confirm (Pioneers invoices as an Egyptian company, D-028).
+- **Project:** `~/Pioneers/projects/pioneers-pricing/` (private repo Pioneers-services/pioneers-pricing). The first-pass market research is in `research.md`.
