@@ -766,3 +766,11 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - training session 1,000 / 20 / 250.
 - **The pricing system is editable:** the Pioneers Price Book (https://claude.ai/artifact/3rUKL4B3XqtBpkF7zEhSxw) holds every line's base and add-ons per market and builds quotes. Only the owner and Editors can change prices; others see them read-only. It is the source of truth; `pioneers-pricing/price-list.md` is a snapshot.
 - More add-ons and the other lines (stores, custom systems, ongoing services, training and migration) are still to be priced.
+
+## D-067 — Pioneers' own ERP: a small one in the website admin now, Connect X1 later (2026-10-18, decided by Shaheen; refines the earlier "Pioneers will use Connect X1 for its ERP")
+- **Now (B):** build a small internal ERP in the Pioneers website's staff area (`~/Pioneers/apps/pioneers-site-local`, the live pioneers.services). It covers the **price list** (taking over from the Price Book artifact, D-066), **clients**, **quotations**, **invoices**, **leads** (already built) and **staff users**.
+- **Later (A):** when Connect X1 is ready, Pioneers becomes a Connect X1 company and the data moves across. B is designed for that move: stable IDs, an export, and a field mapping written down. Connect X1 then needs an **Egypt tax pack**, because Pioneers invoices as an Egyptian company (D-028).
+- **Limits until reviewed:**
+  - invoices in B are **pro-forma / payment requests**, not Egyptian tax invoices, until an accountant confirms the Egyptian Tax Authority e-invoice rules (the earlier site decision: "financial launch needs Egyptian legal/tax review");
+  - issued documents are never deleted, only voided, and every money change is audited.
+- **Process:** map first (D-020) and Shaheen approves before building. The work goes on a branch with tests, and nothing deploys to the live server without his explicit approval.
