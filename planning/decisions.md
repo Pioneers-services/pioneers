@@ -780,3 +780,15 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Install 2: erp.pioneers.services**, Shaheen's own system. Same VPS, **separate process, separate database, separate logins**. ERP screens only: no public pages, no lead form, no website content editor.
 - **One codebase for both** (an ERP-only mode of the same app), so fixes and features reach both; the data never mixes.
 - **Needs approval before going live:** the DNS record for `erp` at Hostinger, the nginx site and TLS certificate, the second systemd service, and the itemised cost (expected none beyond the existing VPS).
+
+## D-069 — Pioneers ERP design: direction B, Pioneers navy and gold; full rebuild of the screens (2026-10-18, chosen by Shaheen; applies to both installs of D-068)
+- Shaheen found the first price-list screen too weak in look, features, workflow and Arabic. He chose **direction B** from three mockups (https://claude.ai/artifact/2bh2NBc8fk28u1AdgyUbco):
+  - a navy (#081329) sidebar with gold (#d6b776) highlights, on warm paper surfaces;
+  - dark navy figure cards;
+  - quotes and invoices shown as documents with a gold top rule.
+- **Every screen is bilingual**: Arabic right-to-left and English, switchable.
+- **The structure shown in the mockup is the target:**
+  - a sidebar grouped Sales (leads, clients, quotations), Finance (pro-forma invoices, payments) and Setup (price list, users and roles, settings);
+  - a dashboard with open quotes, amounts awaiting payment, new leads, won this month, the pipeline lead → client → quoted → accepted → paid, the latest quotes, today's tasks and a Carminta note;
+  - a quotation screen with workflow steps, the document view, its status, market, owner and terms, and actions to edit, accept → pro-forma, and PDF in Arabic and English.
+- **Quotations stay editable** until accepted. Editing a sent quote raises the revision (A, B…) and keeps the history. **Any discount needs an admin**: an admin's own discount counts as approved; a staff member's waits for approval before the quote can be sent.
