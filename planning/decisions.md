@@ -774,3 +774,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - invoices in B are **pro-forma / payment requests**, not Egyptian tax invoices, until an accountant confirms the Egyptian Tax Authority e-invoice rules (the earlier site decision: "financial launch needs Egyptian legal/tax review");
   - issued documents are never deleted, only voided, and every money change is audited.
 - **Process:** map first (D-020) and Shaheen approves before building. The work goes on a branch with tests, and nothing deploys to the live server without his explicit approval.
+
+## D-068 — The interim ERP runs as two separate installs: the website staff area and Shaheen's own system (2026-10-18, decided by Shaheen; extends D-067)
+- **Install 1: pioneers.services** staff area: the company's prices, clients, quotations and pro-forma invoices, beside the lead inbox.
+- **Install 2: erp.pioneers.services**, Shaheen's own system. Same VPS, **separate process, separate database, separate logins**. ERP screens only: no public pages, no lead form, no website content editor.
+- **One codebase for both** (an ERP-only mode of the same app), so fixes and features reach both; the data never mixes.
+- **Needs approval before going live:** the DNS record for `erp` at Hostinger, the nginx site and TLS certificate, the second systemd service, and the itemised cost (expected none beyond the existing VPS).
