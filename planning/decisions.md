@@ -792,3 +792,19 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - a dashboard with open quotes, amounts awaiting payment, new leads, won this month, the pipeline lead → client → quoted → accepted → paid, the latest quotes, today's tasks and a Carminta note;
   - a quotation screen with workflow steps, the document view, its status, market, owner and terms, and actions to edit, accept → pro-forma, and PDF in Arabic and English.
 - **Quotations stay editable** until accepted. Editing a sent quote raises the revision (A, B…) and keeps the history. **Any discount needs an admin**: an admin's own discount counts as approved; a staff member's waits for approval before the quote can be sent.
+
+## D-070 — Connect X1 data-integrity rules, so AKA CONNECT's repeated complaints can't happen (2026-10-27, decided by Shaheen)
+- Shaheen compared AKA CONNECT's repeated user complaints with Connect X1 and approved these rules for every phase. Each rule has an automated check that fails the build when it is broken.
+- **One visibility rule.** Every list, total, report, dashboard and export reads records through one server function (company, branch, role, salesperson, Bin, archive). No page writes its own filter. A consistency test checks that lists, totals, Targets, Reports and the Dashboard agree for the same user and period.
+- **Archive is one switch.** Active / Archive / All applies to lists and totals alike. A total never counts what its list hides, and says what it includes.
+- **One owner, stored once.** The salesperson and branch live only on the job (the enquiry). Quotations, invoices, payments and projects read them through the job and never copy them. Reassigning a job is one recorded action. Issued tax invoices keep a frozen customer copy for legal reasons only, never for reports.
+- **The server calculates.** Prices, VAT, totals, target progress, commissions and report figures come from the server in exact minor units. Lists are paged, searched, sorted and summed on the server; no page downloads a whole table and no row limit silently hides records. An out-of-date browser is told to reload; every edit carries a version so an old screen can't overwrite newer data.
+- **Periods never hide data.** Any month with activity opens, with "No target set" if there is none. Collections count by payment date, sales by acceptance date, in the company's time zone. Closed months are locked; corrections go into the open month with a note.
+- **Nothing with money is deleted.** Invoices and payments are reversed (credit note, payment reversal), never deleted. Other deletes go through the Bin (second person approves, nothing erased, Owner restores). Finance sees a "Deleted and reversed" view. The audit trail is append-only.
+- **Bad data is stopped on entry**, including imports:
+  - blocked: a payment outside the invoice year, in the future or in a locked month; a missing reference for cheque, transfer or card; a payment above the balance unless recorded as an advance;
+  - flagged, with a reason needed to save: the same customer, amount and day as an existing payment;
+  - flagged on entry: a customer with a similar name, phone or email, plus a "Merge customers" tool that moves every document.
+- **Realistic testing.** Before each release, a masked copy of AKA's data (names, phones, addresses scrambled; no real personal data in testing) is reconciled to the fil across invoices, payments, Targets and Reports. This needs Shaheen's approval and D-015 to D-018 settled first. Nothing goes live without it, the accountant's sign-off and a tested restore (D-031).
+- **Complaints become tests.** Every user complaint becomes an automated test before it is fixed.
+- **Order:** the first four rules on the Sales screens now (phase 4, before the sketch slice); periods, deletes and entry checks before the first payment screen (phase 5); the masked-data reconciliation in hardening (phase 8).
