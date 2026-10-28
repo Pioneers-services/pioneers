@@ -831,3 +831,12 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - ask the four ITIDA-licensed e-seal providers (Egypt Trust, MCDR, Fixed Misr, El-Delta) for quotes.
 - **No purchase, registration or ETA credential** comes with this approval. Each cost goes back to Shaheen as an itemised quote.
 - Still to approve: the architecture direction, the Egypt-only tax scope, and phases 1–6. No build before that.
+
+## D-074 — Pioneers Accounting is a SaaS product for customers (2026-10-28, decided by Shaheen; answers the open question in D-072)
+- The accounting and tax system of D-071/D-072 is **a SaaS product sold to customers**, not only an internal tool.
+- Consequences (proposal, to be confirmed in the revised map and plan before any build):
+  - **Multi-tenant from day one**, the D-014 lesson: every customer's books isolated, no per-customer code forks. Pioneers' books and Shaheen's books become the first two tenants, fed by the two ERP installs (D-068) through the same public API customers use.
+  - **Per-customer tax set-up:** each customer registers the product as its ERP with the tax authority and holds its own credentials and e-seal. The product never files for a customer without that customer's own credentials.
+  - **Hosting and data location move off the shared VPS** to production SaaS hosting, after an itemised cost and a legal review of each launch country's data rules (as in D-025).
+  - Still to decide: product name (with a trademark check), launch countries, pricing (D-064 SaaS strategy), and how it relates to Connect X1's finance area (D-024 area 5).
+- Phase 0 (D-073) continues; its questions now cover the product as well as Pioneers' own books. No build before Shaheen approves the revised plan.
