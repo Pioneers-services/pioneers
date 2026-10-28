@@ -854,3 +854,18 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 ## D-077 — Pioneers Accounting is named Finance X2; contacting the ETA approved (2026-10-28, decided by Shaheen; follows D-074, D-075)
 - **Name: Finance X2.** It follows the family rule of a generation suffix (D-015); X2 sits beside Connect X1, whose finance core it is (D-075). First screen on 2026-10-28: no product called "Finance X2" found in a web search; `financex2.com` and `financex2.net` not registered (Verisign registry). **Not bought.** A formal trademark search (Egypt, Bahrain, GCC; Arabic and Latin script) is still needed before the name is used publicly or a domain is bought, as with Tably X5 (D-061, D-063). "Finance" is a descriptive word, so the agent should advise how protectable the mark is as a whole.
 - **Contacting the Egyptian Tax Authority is approved** for the phase 0 questions in `pioneers-accounting/phase0/eta-questions.md` (intermediary model, signing, pre-production access, deadlines). Questions only: no registration, credential request or filing.
+
+## D-078 — Connect X1 phase 4 (Sales) complete; merged to main (2026-10-29, approved by Shaheen: "merge and test")
+- **Merged:** PR Pioneers-services/connectx1#10. Audit in `phase-4/audit.md`, security review in `phase-4/security-review.md`.
+- **Exit gate met:** a lead becomes a client-approved quotation, end to end on test data and in the browser, each step by its owner, with company isolation tests for every new table.
+- **In scope and done:**
+  - leads, customers and enquiries with one job number (D-055) and one timeline with one owner per step (D-059);
+  - the measurement file in stages (D-058) and concept design;
+  - products, shapes and the rate card;
+  - quotations priced on the server, with revisions and approvals by a second person (D-053, D-076);
+  - the sketch pad with automatic wall elevations;
+  - letterheads and documents in English, Arabic or both (D-034);
+  - the data-integrity rules on every Sales list and total (D-070).
+- **Checks:** 114/114 tests locally and on AWS (Mumbai dev, image 1f75f1ce6494, migrations 013–015 applied). Security review: 1 high and 3 medium findings fixed with tests; 8 guards mutation-checked.
+- **Before go-live:** update `@nestjs/platform-express` and `nodemailer` once their fixed releases are two weeks old (about 2026-11-10; security review P4-M3).
+- **Next:** phase 5, Projects (D-031 weeks 9–10), including deposit payments and the remaining D-070 rules (periods, reversals, payment checks).
