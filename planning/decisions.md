@@ -851,6 +851,6 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - A quotation is approved by a second person: a role the Owner marked as an approver, within its limit (D-053), who isn't the person who made it. The Owner may approve their own quotations.
 - Found in the phase 4 security review: the manager could make, approve and send the same quotation. The server refuses this with a clear message, and a test covers it.
 
-## D-076 — Pioneers Accounting is named Finance X2; contacting the ETA approved (2026-10-28, decided by Shaheen; follows D-074, D-075)
+## D-077 — Pioneers Accounting is named Finance X2; contacting the ETA approved (2026-10-28, decided by Shaheen; follows D-074, D-075)
 - **Name: Finance X2.** It follows the family rule of a generation suffix (D-015); X2 sits beside Connect X1, whose finance core it is (D-075). First screen on 2026-10-28: no product called "Finance X2" found in a web search; `financex2.com` and `financex2.net` not registered (Verisign registry). **Not bought.** A formal trademark search (Egypt, Bahrain, GCC; Arabic and Latin script) is still needed before the name is used publicly or a domain is bought, as with Tably X5 (D-061, D-063). "Finance" is a descriptive word, so the agent should advise how protectable the mark is as a whole.
 - **Contacting the Egyptian Tax Authority is approved** for the phase 0 questions in `pioneers-accounting/phase0/eta-questions.md` (intermediary model, signing, pre-production access, deadlines). Questions only: no registration, credential request or filing.
