@@ -869,3 +869,19 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Checks:** 114/114 tests locally and on AWS (Mumbai dev, image 1f75f1ce6494, migrations 013–015 applied). Security review: 1 high and 3 medium findings fixed with tests; 8 guards mutation-checked.
 - **Before go-live:** update `@nestjs/platform-express` and `nodemailer` once their fixed releases are two weeks old (about 2026-11-10; security review P4-M3).
 - **Next:** phase 5, Projects (D-031 weeks 9–10), including deposit payments and the remaining D-070 rules (periods, reversals, payment checks).
+
+## D-079 — Connect X1 phase 5: deposit payment rules approved (2026-10-29, decided by Shaheen; the D-031 Q57 review before building)
+- **The rules** are as written in `phase-5/design.md` §1:
+  - a pro-forma deposit request is made from an accepted quotation and never asks for more than the quotation;
+  - each payment is recorded against one request and never goes above its balance;
+  - a reference is required, except for cash;
+  - the payment date can't be in the future, in a locked month, or outside the request's year;
+  - each save is recorded once;
+  - the same reference can't be recorded twice;
+  - the same customer, amount and day is flagged, and saving needs a reason;
+  - mistakes are reversed, never deleted;
+  - Accounts and the Owner can lock a month.
+- **A. Tax invoices for deposits come in phase 7**, with the Bahrain accountant's review and before go-live. Phase 5 records the deposit against the pro-forma and issues a receipt. No customer uses Connect X1 before then (D-032).
+- **B.** The project opens when the deposit is **received**. Production waits until it's **cleared** in the bank.
+- **C.** Sales or Accounts record payments (D-059). **Only Accounts and the Owner** clear, bounce and reverse payments and lock months.
+- **D.** Two new built-in roles: **Accounts** and **Project manager**.
