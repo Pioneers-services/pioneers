@@ -846,3 +846,7 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Hosting: the same AWS as Connect X1** (D-025): Bahrain `me-south-1`, PostgreSQL on RDS, backup copies in the UAE, the same guardrails. Its own service and database. Each new resource still needs Shaheen's approval of an itemised cost, and each launch country's data rules get a legal review first.
 - **It is Connect X1's finance core:** one accounting product. Connect X1 uses it through the same API instead of building its own ledger (D-024 area 5), so each country's tax pack is built once.
 - No build before Shaheen approves the revised map and plan.
+
+## D-076 — Connect X1: whoever makes a quotation doesn't approve it, except the Owner (2026-10-29, decided by Shaheen; from the phase 4 security review, P4-D1)
+- A quotation is approved by a second person: a role the Owner marked as an approver, within its limit (D-053), who isn't the person who made it. The Owner may approve their own quotations.
+- Found in the phase 4 security review: the manager could make, approve and send the same quotation. The server refuses this with a clear message, and a test covers it.
