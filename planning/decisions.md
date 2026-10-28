@@ -808,3 +808,12 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Realistic testing.** Before each release, a masked copy of AKA's data (names, phones, addresses scrambled; no real personal data in testing) is reconciled to the fil across invoices, payments, Targets and Reports. This needs Shaheen's approval and D-015 to D-018 settled first. Nothing goes live without it, the accountant's sign-off and a tested restore (D-031).
 - **Complaints become tests.** Every user complaint becomes an automated test before it is fixed.
 - **Order:** the first four rules on the Sales screens now (phase 4, before the sketch slice); periods, deletes and entry checks before the first payment screen (phase 5); the masked-data reconciliation in hardening (phase 8).
+
+## D-071 — Pioneers ERP accounting: full double-entry plus tax, separate books per install (2026-10-28, decided by Shaheen; extends D-067 to D-069)
+- **Scope:**
+  - full double-entry accounting: chart of accounts, journal entries, general ledger, trial balance, profit and loss, balance sheet, receivables, expenses, bank and cash accounts, and period lock;
+  - plus **tax**: VAT returns and Egyptian Tax Authority e-invoicing and e-receipts.
+- **Books:** each install keeps its own books (D-068). The website install holds Pioneers' company books; erp.pioneers.services holds Shaheen's own. Same code.
+- **Automatic posting:** pro-forma invoices, payments and expenses create balanced journal entries. Posted entries are never edited or deleted, only reversed.
+- **The tax part is gated:** nothing is filed with, or signed for, the Egyptian Tax Authority until an accountant confirms the rules for Pioneers (Q-E1) and Shaheen approves the ETA registration, credentials and signing set-up. Until then, invoices stay pro-forma.
+- **Process:** map first (D-020) with official sources, then build on the `erp/plan` branch with tests. No deploy without approval.
