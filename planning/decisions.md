@@ -823,3 +823,11 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - The Pioneers ERP (D-067 to D-069) **connects to it through an API**: pro-formas, payments and expenses post into it. The ERP does not hold the books.
 - Everything else in D-071 stands: double-entry plus tax, separate books per install, posted entries reversed and never edited, the ETA part gated on the accountant and Shaheen's approval, map first.
 - Open: internal only or also a product to sell (and Connect X1's finance module, which D-024 already planned as separable).
+
+## D-073 — Pioneers Accounting: phase 0 approved (2026-10-28, approved by Shaheen; follows D-071, D-072)
+- Shaheen approved **phase 0 only** of the Pioneers Accounting plan (`pioneers-accounting/plan.md`, map https://claude.ai/artifact/P4RznMq3vcxYZDL4cm3xgV):
+  - engage an Egyptian accountant, once their quote is approved, to answer the open tax questions;
+  - check Pioneers' tax registration number on the ETA e-invoice and e-receipt lists;
+  - ask the four ITIDA-licensed e-seal providers (Egypt Trust, MCDR, Fixed Misr, El-Delta) for quotes.
+- **No purchase, registration or ETA credential** comes with this approval. Each cost goes back to Shaheen as an itemised quote.
+- Still to approve: the architecture direction, the Egypt-only tax scope, and phases 1–6. No build before that.
