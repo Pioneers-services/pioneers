@@ -817,3 +817,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Automatic posting:** pro-forma invoices, payments and expenses create balanced journal entries. Posted entries are never edited or deleted, only reversed.
 - **The tax part is gated:** nothing is filed with, or signed for, the Egyptian Tax Authority until an accountant confirms the rules for Pioneers (Q-E1) and Shaheen approves the ETA registration, credentials and signing set-up. Until then, invoices stay pro-forma.
 - **Process:** map first (D-020) with official sources, then build on the `erp/plan` branch with tests. No deploy without approval.
+
+## D-072 — Accounting is a full separate project, not an ERP module (2026-10-28, decided by Shaheen; amends D-071)
+- The accounting and tax system of D-071 becomes **its own project**: folder `~/Pioneers/projects/pioneers-accounting/`, private repo Pioneers-services/pioneers-accounting, and its own session. The name is a working name.
+- The Pioneers ERP (D-067 to D-069) **connects to it through an API**: pro-formas, payments and expenses post into it. The ERP does not hold the books.
+- Everything else in D-071 stands: double-entry plus tax, separate books per install, posted entries reversed and never edited, the ETA part gated on the accountant and Shaheen's approval, map first.
+- Open: internal only or also a product to sell (and Connect X1's finance module, which D-024 already planned as separable).
