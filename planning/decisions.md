@@ -840,3 +840,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - **Hosting and data location move off the shared VPS** to production SaaS hosting, after an itemised cost and a legal review of each launch country's data rules (as in D-025).
   - Still to decide: product name (with a trademark check), launch countries, pricing (D-064 SaaS strategy), and how it relates to Connect X1's finance area (D-024 area 5).
 - Phase 0 (D-073) continues; its questions now cover the product as well as Pioneers' own books. No build before Shaheen approves the revised plan.
+
+## D-075 — Pioneers Accounting SaaS: Egypt and Bahrain first, AWS with Connect X1, the finance core of Connect X1 (2026-10-28, chosen by Shaheen; completes D-074)
+- **Launch countries: Egypt and Bahrain.** Egypt: VAT and ETA e-invoicing. Bahrain: VAT and returns (no e-invoicing mandate found). KSA (with FATOORA Phase 2) and the UAE come later, each as its own phase.
+- **Hosting: the same AWS as Connect X1** (D-025): Bahrain `me-south-1`, PostgreSQL on RDS, backup copies in the UAE, the same guardrails. Its own service and database. Each new resource still needs Shaheen's approval of an itemised cost, and each launch country's data rules get a legal review first.
+- **It is Connect X1's finance core:** one accounting product. Connect X1 uses it through the same API instead of building its own ledger (D-024 area 5), so each country's tax pack is built once.
+- No build before Shaheen approves the revised map and plan.
