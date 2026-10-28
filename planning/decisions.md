@@ -885,3 +885,16 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **B.** The project opens when the deposit is **received**. Production waits until it's **cleared** in the bank.
 - **C.** Sales or Accounts record payments (D-059). **Only Accounts and the Owner** clear, bounce and reverse payments and lock months.
 - **D.** Two new built-in roles: **Accounts** and **Project manager**.
+
+## D-079 — Finance X2 follows Connect X1's implementation strategy; hosting per D-037; Bahrain first (2026-10-29, decided by Shaheen; amends D-075)
+- **Same implementation strategy as Connect X1:**
+  - the same stack: NestJS, React and PostgreSQL, as a modular monolith on ECS Fargate and RDS;
+  - the same phase pattern (D-031):
+    - phase 1 is discovery and design: map, prototype screens, tax rules checked;
+    - each phase after that is built on its own `phase-N` branch, with a `build-plan.md` and `screens.md`, company-isolation tests for every new table, an `audit.md` against the plan, and an independent `security-review.md` whose fixes are mutation-checked;
+    - tests pass locally and on AWS;
+    - Shaheen approves the merge, and the result is recorded here;
+  - the same rules: everything is built by Pioneers; each AWS resource needs an itemised cost approved first.
+  - Connect X1's foundation code (tenants, Owner with two-factor login, users, roles, audit, seat billing, setup journey, country packs) is reused as the starting point, not rewritten.
+- **Hosting correction to D-075:** "the same AWS as Connect X1" means **Mumbai `ap-south-1`, with backups in Frankfurt `eu-central-1`** (D-037). AWS Bahrain is unavailable, and the UAE region is damaged. Finance X2 gets its own stack and database in the same account. Connect X1's legal review for this hosting is done (D-042); whether it also covers Finance X2's data is confirmed with the reviewer.
+- **Bahrain first.** Finance X2 builds the ledger, the Bahrain VAT pack and the API first, in parallel with Connect X1's phases 5 and 6. **Connect X1's phase 7 (Finance & VAT) becomes "connect to Finance X2"** instead of building its own ledger, and waits for it if needed. Egypt (VAT, then ETA e-invoicing) follows straight after. The ledger is written once.
