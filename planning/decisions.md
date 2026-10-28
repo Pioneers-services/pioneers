@@ -886,7 +886,7 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **C.** Sales or Accounts record payments (D-059). **Only Accounts and the Owner** clear, bounce and reverse payments and lock months.
 - **D.** Two new built-in roles: **Accounts** and **Project manager**.
 
-## D-079 — Finance X2 follows Connect X1's implementation strategy; hosting per D-037; Bahrain first (2026-10-29, decided by Shaheen; amends D-075)
+## D-080 — Finance X2 follows Connect X1's implementation strategy; hosting per D-037; Bahrain first (2026-10-29, decided by Shaheen; amends D-075)
 - **Same implementation strategy as Connect X1:**
   - the same stack: NestJS, React and PostgreSQL, as a modular monolith on ECS Fargate and RDS;
   - the same phase pattern (D-031):
