@@ -915,3 +915,12 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - the rest of D-070 (similar customers, Merge customers, "Deleted and reversed") and the D-081 project rules.
 - **Checks:** 136/136 tests locally and on AWS (Mumbai dev, image 1ffc79695d24, migrations 016–019 applied). Security review: no high findings; 2 medium and 4 low fixed with tests; 24 guards mutation-checked.
 - **Next:** phase 6 (weeks 11–12), Purchasing & stock. Phase 7 connects to Finance X2 (D-080).
+
+## D-083 — Connect X1 phase 6: purchasing and stock rules approved (2026-10-29, decided by Shaheen; the D-020 review before building)
+- **The design** is as written in `phase-6/design.md`: suppliers; purchase orders always for a project or for stock; goods receipt line by line, never above what's open; supplier bills three-way matched with the order and the goods received; nothing with money deleted; locked months (D-070); nobody approves their own document except the Owner (D-076).
+- **A. Planned cost:** a cost budget per quotation line, made when the handover is accepted. BOQ lines carry their cost; measured lines start at the price less a company target margin (new setting, default 30%). The project manager adjusts it and a manager approves; each later change is a new version with a reason.
+- **B. PO approval:** by the roles and limits the Owner sets (`approve.po`, `approve.po_limits`; default manager and Owner), and always when a PO takes its budget line or the project over plan. Within budget and under the maker's own limit, a PO is approved straight away.
+- **C. Stock:** each PO line is for a project (cost straight to it) or for stock (into the store, issued to projects at average cost). On hand, promised and available are shown; counts need a reason and a second person. One store per company in Wave 1.
+- **D. Supplier bills:** recorded and three-way matched in phase 6; any price difference against the PO needs a reason and a manager, with no automatic tolerance. Paying, ledger posting and input VAT go to Finance X2 in phase 7 (D-080).
+- **E. Currency:** the company currency; the supplier's currency and amount are noted for reference. Full multi-currency comes with Finance X2, before go-live.
+- **F. Roles:** a new built-in Purchasing role (suppliers, POs, receipt, stock); Accounts also record and match bills; project managers see their projects' costs and reserve stock.
