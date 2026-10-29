@@ -935,3 +935,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **In scope and done:** suppliers (flagged and merged); the project cost budget (D-083 A); purchase orders for a project or for stock with approval when over plan or over the maker's limit (D-083 B, D-076); goods received with rejects; stock on hand, promised and available at average cost (D-083 C, Q36); supplier bills three-way matched, price differences approved within the approver's limit (D-083 D, D-084); the Costs tab and Purchasing screens; a new Purchasing role.
 - **Checks:** 152/152 tests locally and on AWS (Mumbai dev, image 90d207826d85, migrations 020–021 applied). Security review: no high findings; 2 medium and 2 low fixed; 31 guards mutation-checked.
 - **Next:** phase 7 (weeks 13–15), Finance & VAT, which connects to Finance X2 (D-080): tax invoices, paying supplier bills, ledger posting, input and output VAT, multi-currency, the NBR return.
+
+## D-086 — Connect X1 phase 7 builds what doesn't need the ledger; Finance X2 takes the entries later (2026-10-29, decided by Shaheen; Finance X2 is at phase 0 only, D-073)
+- **Finance X2 has no code yet** (its plan is approved for phase 0 only), so Connect X1's phase 7 can't connect to it as D-080 planned.
+- **Phase 7 builds Connect X1's own money documents:** tax invoices (deposits included, D-079 A), credit notes, credit limits, retention, post-dated cheques, and paying supplier bills.
+- **Every money event also writes a balanced entry to an outbox** for Finance X2 to take when it exists. The books, reports and NBR return stay Finance X2's (D-080), so **go-live now depends on Finance X2** being ready by phase 8.
+- **Tax rules:** Claude designs the tax invoice and VAT treatment from official NBR sources, cited, for Shaheen's review; a Bahrain accountant checks it before go-live (D-031). Shaheen arranges the accountant.
