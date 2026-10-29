@@ -941,3 +941,12 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Phase 7 builds Connect X1's own money documents:** tax invoices (deposits included, D-079 A), credit notes, credit limits, retention, post-dated cheques, and paying supplier bills.
 - **Every money event also writes a balanced entry to an outbox** for Finance X2 to take when it exists. The books, reports and NBR return stay Finance X2's (D-080), so **go-live now depends on Finance X2** being ready by phase 8.
 - **Tax rules:** Claude designs the tax invoice and VAT treatment from official NBR sources, cited, for Shaheen's review; a Bahrain accountant checks it before go-live (D-031). Shaheen arranges the accountant.
+
+## D-087 — Connect X1 phase 7: tax invoice and money rules approved (2026-10-30, decided by Shaheen; the D-020 review before building; follows D-086)
+- **The design** is `phase-7/design.md`, from the NBR VAT General Guide v1.16 (20 September 2026), §6.3.9, §9.5.2 and §10. A Bahrain accountant confirms it before go-live (D-031).
+- **A. Deposits:** a received payment is a VAT due date (§9.5.2). Connect X1 lists each received deposit or stage payment without a VAT invoice, with its deadline (the 15th of the next month, §10.2.2); Accounts issue them. A bounced or reversed payment that was invoiced gets a credit note automatically (§10.10).
+- **B. The rest:** invoiced when the handover certificate (the certificate of completion) is signed, less everything invoiced before.
+- **C. VAT per line:** 10% by default, 0% for new-building work (with the building permit number, §10.3), or exempt. Zero-rating only when the company turns it on and the job is marked as a new building.
+- **D. Supplier payments:** by Accounts; above the payer's purchase-order limit, a second person approves.
+- **E. Outbox entries** use a small default Bahrain chart of accounts, mapped by Finance X2 later and reviewed by the accountant.
+- **F. Currency:** BHD-only invoicing in Wave 1; foreign-currency invoicing comes with Finance X2, before go-live.
