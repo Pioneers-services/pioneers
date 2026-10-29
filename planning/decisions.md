@@ -928,3 +928,10 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 ## D-084 — Connect X1 phase 6: two purchasing rules from the audit (2026-10-29, approved by Shaheen: "approve"; P6-D1, P6-D2)
 - **Stock stays valued at the order price** when a supplier bill's approved price differs. The difference is on the bill; Finance X2 records price differences in the ledger and revalues stock in phase 7 (D-080). Project orders are unaffected: their actual cost is the billed amount.
 - **Approving a bill's price difference follows the approver's purchase-order limit** (`approve.po_limits`), applied to the bill total, like orders (D-083 B).
+
+## D-085 — Connect X1 phase 6 (Purchasing & stock) complete; merged to main (2026-10-29, approved by Shaheen)
+- **Merged:** PR Pioneers-services/connectx1#14. Audit in `phase-6/audit.md`, security review in `phase-6/security-review.md`.
+- **Exit gate met:** committed cost is visible per project (Q33), as planned vs committed vs actual by budget line, on test data and in the browser from budget to matched bill.
+- **In scope and done:** suppliers (flagged and merged); the project cost budget (D-083 A); purchase orders for a project or for stock with approval when over plan or over the maker's limit (D-083 B, D-076); goods received with rejects; stock on hand, promised and available at average cost (D-083 C, Q36); supplier bills three-way matched, price differences approved within the approver's limit (D-083 D, D-084); the Costs tab and Purchasing screens; a new Purchasing role.
+- **Checks:** 152/152 tests locally and on AWS (Mumbai dev, image 90d207826d85, migrations 020–021 applied). Security review: no high findings; 2 medium and 2 low fixed; 31 guards mutation-checked.
+- **Next:** phase 7 (weeks 13–15), Finance & VAT, which connects to Finance X2 (D-080): tax invoices, paying supplier bills, ledger posting, input and output VAT, multi-currency, the NBR return.
