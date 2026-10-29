@@ -903,3 +903,15 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **A project opened in error** (its only payments were later reversed or bounced, for example recorded on the wrong job) shows "No money stands against this project". The project manager can close it as "opened in error" with a reason, and a second person approves. It stays on record and leaves the active lists and the dashboard. If a real payment is recorded on that job later, the project reopens.
 - **A drawing added after release to production** is allowed, but the project shows "Drawings changed after release" to the project manager and on Home until the project team confirms production has the change. Proper change orders (variations) stay in Wave 2.
 - **The project page gets its Activity tab before go-live:** the project's own lines from the audit trail, worked out on the server.
+
+## D-082 — Connect X1 phase 5 (Projects, the deposit gate and deposit payments) complete; merged to main (2026-10-29, approved by Shaheen)
+- **Merged:** PR Pioneers-services/connectx1#12. Audit in `phase-5/audit.md`, security review in `phase-5/security-review.md`.
+- **Exit gate met:** Sales and Projects tested end to end on test data and in the browser, from the first deposit payment to the warranty, each step by its owner, with company isolation tests for every new table. No customer uses Connect X1 before go-live (D-032).
+- **In scope and done:**
+  - deposit requests and payments with every D-079 rule; Accounts clear, bounce and reverse; locked months;
+  - projects opened by the first payment, the handover, stages 8–15 with one owner each, the final measurement;
+  - the deposit gate with a two-person override; the drawings register; site diary, snags, handover certificate and warranty;
+  - the dashboard, the Payments and Projects screens, and the project page with a tab per department and Activity;
+  - the rest of D-070 (similar customers, Merge customers, "Deleted and reversed") and the D-081 project rules.
+- **Checks:** 136/136 tests locally and on AWS (Mumbai dev, image 1ffc79695d24, migrations 016–019 applied). Security review: no high findings; 2 medium and 4 low fixed with tests; 24 guards mutation-checked.
+- **Next:** phase 6 (weeks 11–12), Purchasing & stock. Phase 7 connects to Finance X2 (D-080).
