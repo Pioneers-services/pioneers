@@ -924,3 +924,7 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **D. Supplier bills:** recorded and three-way matched in phase 6; any price difference against the PO needs a reason and a manager, with no automatic tolerance. Paying, ledger posting and input VAT go to Finance X2 in phase 7 (D-080).
 - **E. Currency:** the company currency; the supplier's currency and amount are noted for reference. Full multi-currency comes with Finance X2, before go-live.
 - **F. Roles:** a new built-in Purchasing role (suppliers, POs, receipt, stock); Accounts also record and match bills; project managers see their projects' costs and reserve stock.
+
+## D-084 — Connect X1 phase 6: two purchasing rules from the audit (2026-10-29, approved by Shaheen: "approve"; P6-D1, P6-D2)
+- **Stock stays valued at the order price** when a supplier bill's approved price differs. The difference is on the bill; Finance X2 records price differences in the ledger and revalues stock in phase 7 (D-080). Project orders are unaffected: their actual cost is the billed amount.
+- **Approving a bill's price difference follows the approver's purchase-order limit** (`approve.po_limits`), applied to the bill total, like orders (D-083 B).
