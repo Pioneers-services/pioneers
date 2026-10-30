@@ -958,3 +958,10 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Shaheen engages a Bahrain accountant now,** with the question list in `phase-7/overall-audit.md` (zero-rating apportionment, simplified invoices, the chart and entry treatment, late invoices' VAT period).
 - **Two go-live minimums are scheduled before phase 8:** Excel import (customers, suppliers, stock items, open jobs, opening balances) and the Arabic interface (right-to-left). Each gets its own design for review first (D-020).
 - **Before go-live:** the package updates (P4-M3), the upload rate limit, the rate-card delete policy, the open low findings O-L2 and O-L3, an independent review (for example `/code-review ultra`), and the dynamic scan once `HAWK_API_KEY` is set up.
+
+## D-089 — Connect X1 Excel import rules approved (2026-10-30, decided by Shaheen; the D-020 review before building; follows D-088)
+- **The design** is `go-live/excel-import-design.md`. It covers templates for customers, suppliers, stock with opening stock, open jobs and opening balances, each checked row by row (a dry run) before anything is saved, as one audited batch that reconciles to the file's totals.
+- **A. Our own `.xlsx` reader,** with no outside package (Shaheen's "built by Pioneers" rule). It reads values only (no formulas, macros, links or DTDs), with limits of 5 MB, 5,000 rows and 200 columns, and zip bombs refused. CSV is also accepted.
+- **B. Open jobs already part-invoiced in the old system are brought in** as projects at their stage, with "invoiced elsewhere" (net and VAT by rate) and "paid elsewhere". The final invoice takes off what was invoiced elsewhere, so no VAT is charged twice, and payments from before the cut-off get no new VAT invoice. Opening balances and stock write balanced outbox entries against a 3000 Opening balances account, for the accountant to review.
+- **C. All or nothing per file:** a file must check clean before anything is saved.
+- **D. Duplicates:** rows matching an existing customer or supplier are shown as matched. Per batch, they're either skipped or only their empty fields are filled. Nothing is overwritten or merged automatically.
