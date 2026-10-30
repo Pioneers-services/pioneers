@@ -950,3 +950,11 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **D. Supplier payments:** by Accounts; above the payer's purchase-order limit, a second person approves.
 - **E. Outbox entries** use a small default Bahrain chart of accounts, mapped by Finance X2 later and reviewed by the accountant.
 - **F. Currency:** BHD-only invoicing in Wave 1; foreign-currency invoicing comes with Finance X2, before go-live.
+
+## D-088 — Connect X1 phase 7 complete and merged; the audit's go-live recommendations adopted (2026-10-30, approved by Shaheen: "lets do it")
+- **Merged:** PR Pioneers-services/connectx1#16. Audit in `phase-7/audit.md`, security review in `phase-7/security-review.md`, whole-app audit in `phase-7/overall-audit.md`.
+- **Exit gate met for Connect X1's part (D-086):** figures reconcile on test data: documents = entries, every month balances. The aggressive audit found 3 high VAT findings, all fixed with reproducing tests. 173/173 locally. A new test checks isolation on every company table.
+- **Finance X2 starts building now, Bahrain first,** in its own session. Its input is Connect X1's outbox of balanced entries (D-086). The books, P&L, balance sheet, bank reconciliation, the NBR VAT return and multi-currency come from it. **This is the go-live critical path;** if it can't be ready by phase 8, go-live moves.
+- **Shaheen engages a Bahrain accountant now,** with the question list in `phase-7/overall-audit.md` (zero-rating apportionment, simplified invoices, the chart and entry treatment, late invoices' VAT period).
+- **Two go-live minimums are scheduled before phase 8:** Excel import (customers, suppliers, stock items, open jobs, opening balances) and the Arabic interface (right-to-left). Each gets its own design for review first (D-020).
+- **Before go-live:** the package updates (P4-M3), the upload rate limit, the rate-card delete policy, the open low findings O-L2 and O-L3, an independent review (for example `/code-review ultra`), and the dynamic scan once `HAWK_API_KEY` is set up.
