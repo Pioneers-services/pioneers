@@ -994,3 +994,4 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - the Bahrain accountant reviews the opening entries and the zero-value final invoice;
   - an independent review and HawkScan, which needs a key.
 - **Next:** the AWS run (migrations 024–027), then the Arabic interface design for review (D-088).
+- **AWS run (2026-10-31):** image `3b92f685d32a` is on the Mumbai dev job. Migrations 024–027 are applied, and 202/202 tests pass on AWS.
