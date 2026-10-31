@@ -965,3 +965,32 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **B. Open jobs already part-invoiced in the old system are brought in** as projects at their stage, with "invoiced elsewhere" (net and VAT by rate) and "paid elsewhere". The final invoice takes off what was invoiced elsewhere, so no VAT is charged twice, and payments from before the cut-off get no new VAT invoice. Opening balances and stock write balanced outbox entries against a 3000 Opening balances account, for the accountant to review.
 - **C. All or nothing per file:** a file must check clean before anything is saved.
 - **D. Duplicates:** rows matching an existing customer or supplier are shown as matched. Per batch, they're either skipped or only their empty fields are filled. Nothing is overwritten or merged automatically.
+
+## D-090 — Connect X1 Excel import complete and merged; imports skip approvals for work done before Connect X1 (2026-10-31, approved by Shaheen: "confirmed, merge it"; follows D-089)
+- **Merged:** PR #18 (`Pioneers-services/connectx1`). Design and progress are in `go-live/excel-import-design.md`; the audit is `go-live/excel-import-audit.md`.
+- **Built:**
+  - five templates: customers, suppliers, stock with opening stock, open jobs and opening balances;
+  - our own reader;
+  - a dry run with a formula-safe error report;
+  - all-or-nothing batches;
+  - one cut-off date for every opening import;
+  - one balanced opening entry per batch, against 3000;
+  - a reconciliation per batch;
+  - the screen at Finance › Import from Excel.
+- **Paying opening balances (Shaheen, 2026-10-31):** a supplier's is an opening bill, paid through supplier payments. A customer's is a "balance brought forward" with one request; its payments get no VAT invoice and open no project.
+- **Accepted by Shaheen:** imports skip the usual approvals for work done before Connect X1. An imported job's quotation is accepted without the second-person approval (D-076), and a job at production or later counts as through the deposit gate. Only the Owner, admins and `import.run` can import, and every import is audited.
+- **Aggressive audit:** 13 findings were fixed, 4 of them high. The audit's six code recommendations were also built:
+  - balances kept out of the sales lists;
+  - a statement of old invoices;
+  - a database trigger fixing opening bills;
+  - customers' Arabic name;
+  - zero-rated open jobs;
+  - a drawings note on the import screen.
+
+  Result: 202/202 tests, 52 guards mutation-checked (all caught), checked in the browser.
+- **Before go-live:**
+  - run the pilots' real files (Q9);
+  - rehearse the cut-over in a test company, since an import can't be undone;
+  - the Bahrain accountant reviews the opening entries and the zero-value final invoice;
+  - an independent review and HawkScan, which needs a key.
+- **Next:** the AWS run (migrations 024–027), then the Arabic interface design for review (D-088).
