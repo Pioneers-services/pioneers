@@ -995,3 +995,10 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - an independent review and HawkScan, which needs a key.
 - **Next:** the AWS run (migrations 024–027), then the Arabic interface design for review (D-088).
 - **AWS run (2026-10-31):** image `3b92f685d32a` is on the Mumbai dev job. Migrations 024–027 are applied, and 202/202 tests pass on AWS.
+
+## D-091 — Connect X1 Arabic interface rules approved (2026-11-01, decided by Shaheen; the D-020 review before building; follows D-088)
+- **The design** is `go-live/arabic-interface-design.md` (map section 4.16). Every screen, message and email can be used in Arabic, right to left, or English. Each person chooses, and the choice is remembered on their account. Documents keep their own language setting (D-034).
+- **A and B. Our own dictionary,** with no outside package, used by the screens and by the server's messages, emails and Carminta's replies. A test fails the build if any text has no Arabic. One glossary is shared with the documents' terms (AC-12).
+- **C. In Arabic:** Western digits (0–9), Arabic month names, the Gregorian calendar, and the amount followed by د.ب. This matches the invoices and Excel.
+- **D. Two native speakers review every screen in a test company before go-live:** one from the studio and one from AKA. This brings forward phase 8's "Arabic checks".
+- **E. Readex Pro and IBM Plex Sans Arabic are hosted with the app,** with no Google Fonts call. The unused Cairo and Noto Sans Arabic are dropped.
