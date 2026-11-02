@@ -1002,3 +1002,10 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **C. In Arabic:** Western digits (0–9), Arabic month names, the Gregorian calendar, and the amount followed by د.ب. This matches the invoices and Excel.
 - **D. Two native speakers review every screen in a test company before go-live:** one from the studio and one from AKA. This brings forward phase 8's "Arabic checks".
 - **E. Readex Pro and IBM Plex Sans Arabic are hosted with the app,** with no Google Fonts call. The unused Cairo and Noto Sans Arabic are dropped.
+
+## D-092 — Connect X1 Arabic interface complete and merged; the native-speaker review follows later (2026-11-02, approved by Shaheen: "yes, merge it"; follows D-091)
+- **Merged** as Pioneers-services/connectx1 PR 20: every screen, server message, email and Carminta's replies in Arabic or English, right to left, per person (migration 028). On AWS Mumbai dev: migration applied, tests pass.
+- **Audit** (`go-live/arabic-interface-audit.md`): bidi control characters are dropped where text enters, so a name can't reorder an amount beside it; dictionary lookups match own entries only. Both fixed and tested.
+- **Fonts (corrects D-091 E):** Cairo and Noto Sans Arabic are hosted too, since they're on the document-font list (Q59).
+- **The native-speaker review (D-091 D) waits for the two pilot clients.** The checklist and workbook are ready (`go-live/arabic-review/`). Their corrections go in as a small update before go-live.
+- **The review site** (`review.connectx1.com`, ≈ $52/month, charged by the hour) is costed but **not approved or built**: it waits until the reviewers are confirmed. connectx1.com's DNS and email stay at Hostinger; only two CNAME records would be added.
