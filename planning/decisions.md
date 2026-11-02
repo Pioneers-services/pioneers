@@ -1050,3 +1050,11 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - At most about 5 minutes of data lost; a working copy in about 15 minutes. The copy was deleted.
   - The daily AWS Backup copy to Frankfurt works and uses AWS's free key there, so no $1 key is needed.
   - Actual cost about $0.10. Production gets its own drill before go-live.
+
+## D-095 — Connect X1: two-factor login required for everyone (2026-11-02, decided by Shaheen: "require two-factor for everyone"; security review P8-M3)
+- **Every member of every company must turn on two-factor login before using the company,** not only Owners. Pioneers staff already must (D-048).
+- **Why:** Accounts, approvers and Purchasing clear payments, issue VAT invoices and approve orders. A password alone was enough for them.
+- **How it works:**
+  - after accepting an invitation and choosing a password, each person sets up an authenticator app, as Owners already do;
+  - until then, every company screen and route refuses them and points them to setup.
+- **Effect on the pilots:** each of the 21 AKA users and the studio's 8–10 users needs an authenticator app on their phone. The account recovery in P8-M2 (a staff-approved two-factor reset) matters more now.
