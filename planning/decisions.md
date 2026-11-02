@@ -1031,3 +1031,17 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - P8-M4: a separate task definition when the web service is built;
   - P8-M5: a Frankfurt snapshot copy, which needs its own cost approval, and the restore drill;
   - P8-M6: the launch settings checklist.
+
+## D-094 — Connect X1 restore drill and daily database copy to Frankfurt approved (2026-11-02, approved by Shaheen: "approve both, start the restore drill"; follows D-093, security review P8-M5)
+- **A. The restore drill (one-off, Mumbai), ≈ $0.05:**
+  - restore the dev database, as it was minutes earlier, into a temporary db.t4g.micro ($0.021 an hour);
+  - compare every table with the original;
+  - read data back through the app;
+  - time the restore;
+  - delete the copy.
+
+  It also restores an earlier version of a file from S3 and reads a file from the Frankfurt copy.
+- **B. A daily database backup copied to Frankfurt (ongoing), ≈ $0.25–0.50 a month at 1.7 GB:**
+  - RDS's own backup replication isn't supported from Mumbai to Frankfurt (checked), so AWS Backup runs it: a daily backup, 7 days kept in each region.
+  - Prices: Frankfurt $0.103 per GB a month; Mumbai about $0.10 per GB a month; $0.086 per GB sent.
+  - Up to $1 a month more if a customer key is needed in Frankfurt. It grows about $0.20 a month per extra GB.
