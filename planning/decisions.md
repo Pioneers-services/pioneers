@@ -1079,3 +1079,16 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Cost:** none. Email uses the existing Hostinger mailbox. Changing an account's email stays a Pioneers support task for now.
 - **Built and merged (2026-11-03)** as Pioneers-services/connectx1 PR 28 (§10 of the design). On AWS Mumbai dev: migration 029 is applied, and tests pass apart from the known date test, which is being fixed separately.
   - Two deliberate tightenings: a recovery code keeps two-factor login on and requires a new authenticator first; a password reset doesn't clear the two-factor lock.
+
+## D-097 — Connect X1 speed test from Bahrain approved (2026-11-03, approved by Shaheen: "yes, approve it, run the speed test"; D-031 phase 8)
+- **What:** a temporary API container in Mumbai, about 2 hours, with a public address open only to the testing Mac in Bahrain. It runs against the dev database with made-up data only (D-032).
+- **Measured from Bahrain:**
+  - the network round trip;
+  - API times, typical and slowest over 50 runs, then with 30 people at once;
+  - the main screens in the browser, English and Arabic;
+  - the first-visit download of the web bundle.
+
+  Then everything is deleted.
+- **Cost:** ≈ $0.05 (Fargate 0.5 vCPU/1 GB ≈ $0.015 an hour, public IPv4 $0.005 an hour, data out under 1 GB).
+- **Not covered:** the real public setup with a load balancer and HTTPS. That's the hosting setup, still not approved.
+- **Proposed targets, for approval with the results:** lists under 0.5 s, screens under 2 s, a first visit under 4 s.
