@@ -1045,3 +1045,8 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - RDS's own backup replication isn't supported from Mumbai to Frankfurt (checked), so AWS Backup runs it: a daily backup, 7 days kept in each region.
   - Prices: Frankfurt $0.103 per GB a month; Mumbai about $0.10 per GB a month; $0.086 per GB sent.
   - Up to $1 a month more if a customer key is needed in Frankfurt. It grows about $0.20 a month per extra GB.
+- **Result (2026-11-02):** the drill passed on AWS Mumbai dev (`phase-8/restore-drill.md`, Pioneers-services/connectx1 PR 25).
+  - All 68 tables matched the original, row for row, and the app read data and an S3 file correctly on the copy.
+  - At most about 5 minutes of data lost; a working copy in about 15 minutes. The copy was deleted.
+  - The daily AWS Backup copy to Frankfurt works and uses AWS's free key there, so no $1 key is needed.
+  - Actual cost about $0.10. Production gets its own drill before go-live.
