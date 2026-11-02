@@ -1077,3 +1077,5 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **D.** Reset links last 30 minutes, with at most 3 emails per account per hour.
 - **E.** Reset links point to `app.connectx1.com`.
 - **Cost:** none. Email uses the existing Hostinger mailbox. Changing an account's email stays a Pioneers support task for now.
+- **Built and merged (2026-11-03)** as Pioneers-services/connectx1 PR 28 (§10 of the design). On AWS Mumbai dev: migration 029 is applied, and tests pass apart from the known date test, which is being fixed separately.
+  - Two deliberate tightenings: a recovery code keeps two-factor login on and requires a new authenticator first; a password reset doesn't clear the two-factor lock.
