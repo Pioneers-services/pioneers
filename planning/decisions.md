@@ -1058,3 +1058,22 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - after accepting an invitation and choosing a password, each person sets up an authenticator app, as Owners already do;
   - until then, every company screen and route refuses them and points them to setup.
 - **Effect on the pilots:** each of the 21 AKA users and the studio's 8–10 users needs an authenticator app on their phone. The account recovery in P8-M2 (a staff-approved two-factor reset) matters more now.
+
+## D-096 — Connect X1 account recovery approved (2026-11-03, decided by Shaheen: "approve A–E as recommended, start building"; security review P8-M2; the D-020 review before building)
+- **The design:** `phase-8/account-recovery-design.md`.
+  - Forgot password by email.
+  - Change password.
+  - Sign out everywhere.
+  - Recovery codes.
+  - Two-factor resets by the company or by Pioneers.
+
+  A password reset never removes two-factor login.
+- **A.** 10 one-time recovery codes when two-factor login is turned on. Existing users are asked once to save theirs.
+- **B.** The company's Owner or an Admin with "manage members" may reset an ordinary member's two-factor login, but never their own, and only for members who belong to that company alone.
+- **C.** Owners, people in several companies, and Pioneers staff go to Pioneers:
+  - an identity check on a video call;
+  - a request by one staff member, approved by a manager who is neither the requester nor the person;
+  - a 24-hour wait with emails to the person and every Owner and Admin of their companies, any of whom can cancel.
+- **D.** Reset links last 30 minutes, with at most 3 emails per account per hour.
+- **E.** Reset links point to `app.connectx1.com`.
+- **Cost:** none. Email uses the existing Hostinger mailbox. Changing an account's email stays a Pioneers support task for now.
