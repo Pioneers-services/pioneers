@@ -1009,3 +1009,24 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Fonts (corrects D-091 E):** Cairo and Noto Sans Arabic are hosted too, since they're on the document-font list (Q59).
 - **The native-speaker review (D-091 D) waits for the two pilot clients.** The checklist and workbook are ready (`go-live/arabic-review/`). Their corrections go in as a small update before go-live.
 - **The review site** (`review.connectx1.com`, ≈ $52/month, charged by the hour) is costed but **not approved or built**: it waits until the reviewers are confirmed. connectx1.com's DNS and email stay at Hostinger; only two CNAME records would be added.
+
+## D-093 — Connect X1 Phase 8 security review merged; file storage on S3 approved (2026-11-02, approved by Shaheen: "yes, merge it and approve the file storage"; follows D-092)
+- **Merged** as Pioneers-services/connectx1 PR 23 (`phase-8/security-review.md`): 1 high, 6 medium, 2 low. P8-M1 (reserved addresses trusted by CORS) is fixed and tested.
+- **Approved: P8-H1, uploaded files move off the container disk to S3.**
+  - A bucket in Mumbai, encrypted with the existing Connect X1 key (S3 Bucket Key on, so few key requests), versioned, with all public access blocked and TLS required.
+  - A replica in Frankfurt (D-037), encrypted by S3 itself, since a KMS key there would add $1 a month.
+  - Replaced or deleted versions are kept 30 days.
+  - The app signs its own S3 requests with node:crypto, with no AWS SDK ("built by Pioneers").
+- **Cost (itemised, pilot size of about 5 GB):**
+  - Mumbai storage, about $0.025 per GB a month (≈ $0.13);
+  - Frankfurt storage, about $0.025 per GB a month (≈ $0.12);
+  - copying to Frankfurt, about $0.09 per GB, once per file (≈ $0.45 for the first 5 GB);
+  - requests and key use, a few cents.
+
+  That's under $1 a month at pilot size, growing with the files. It reaches S3 through the existing free gateway endpoint, with no NAT gateway.
+- **Still open from the review:**
+  - P8-M2: an account-recovery design for review;
+  - P8-M3: two-factor login for everyone, which Shaheen decides;
+  - P8-M4: a separate task definition when the web service is built;
+  - P8-M5: a Frankfurt snapshot copy, which needs its own cost approval, and the restore drill;
+  - P8-M6: the launch settings checklist.
