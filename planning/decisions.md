@@ -1024,6 +1024,7 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - requests and key use, a few cents.
 
   That's under $1 a month at pilot size, growing with the files. It reaches S3 through the existing free gateway endpoint, with no NAT gateway.
+- **Built and merged (2026-11-02)** as Pioneers-services/connectx1 PR 24. It runs on AWS Mumbai dev: 208 tests pass there with every upload in S3, and the files are encrypted, copied to Frankfurt and closed to the public. A `../` storage key was found while building and is now refused.
 - **Still open from the review:**
   - P8-M2: an account-recovery design for review;
   - P8-M3: two-factor login for everyone, which Shaheen decides;

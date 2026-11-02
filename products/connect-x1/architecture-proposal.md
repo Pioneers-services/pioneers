@@ -1,6 +1,13 @@
 # Architecture proposal
 Status: Proposed, providers and stack not approved
 
+## Confirmed pilot and SaaS requirement
+Shaheen confirmed AKA Homes as the first customer with 21 user accounts. A prospective additional customer would have at least 15 users; this is not a committed onboarding or an upper bound. Concurrent usage, data volume and growth remain unknown. These figures are initial sizing inputs, not platform limits.
+
+SaaS architecture from day one is a mandatory product requirement, even while only AKA is live. No AKA-specific code fork or hardcoded company settings. Test isolation with a second synthetic tenant before migration.
+
+The platform must support tenant onboarding, memberships and invitations, role/record permissions, company configuration, module entitlements and subscription lifecycle. Isolate files, background jobs, Action Center findings, integrations, AI retrieval/memory and usage accounting as well as database records. Separate platform administration from customer administration; log authorized support access. Enforce tenant-scoped resource limits to contain noisy customers. Provider and detailed schema choices remain proposed, not implemented.
+
 ## Starting shape
 Modular monolith with clear business boundaries; React/TypeScript interface and TypeScript backend are candidates. Managed PostgreSQL for transactional records, private object storage for files, durable workers for scanning/imports/reports/notifications. Established authentication, transactional email, monitoring, and subscription entitlements.
 
