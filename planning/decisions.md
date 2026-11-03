@@ -1101,3 +1101,9 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   All three proposed targets are met; Shaheen to approve them. Everything temporary was deleted; cost about $0.05.
 - **Found and fixed:** the customer and supplier lists compared every pair of records to find look-alikes, taking 38 s at 2,000 customers. They now count in one pass, fast even right after an Excel import, guarded by `scale.test.ts`.
 - **For the hosting setup:** compressed web files and kept-open connections (HTTP/2).
+- **Targets approved (2026-11-03, Shaheen: "ok"):**
+  - everyday actions under 0.5 s;
+  - screens under 2 s;
+  - a first visit under 4 s, measured from Bahrain.
+
+  PR 29 merged.
