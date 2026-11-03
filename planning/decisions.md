@@ -1126,3 +1126,12 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **Follow-ups:**
   - confirm the 4 November nightly backup completes;
   - the backup-failure alert is now urgent, since this failure was silent.
+
+## D-099 — Connect X1 backup-failure alert approved (2026-11-03, approved by Shaheen: "ok, pioneers.services.ai@gmail.com"; follows D-098, P8-M6)
+- **What:** an email to pioneers.services.ai@gmail.com whenever:
+  - the nightly database backup fails, is aborted or expires;
+  - its copy to Frankfurt fails.
+
+  It was needed because the first nightly backup failed silently (D-098).
+- **How:** AWS Backup's own events go through an EventBridge rule to an SNS topic with an email subscription. The subscription must be confirmed from the first email AWS sends.
+- **Cost:** $0. EventBridge doesn't charge for AWS service events, and SNS email is free for the first 1,000 messages a month.
