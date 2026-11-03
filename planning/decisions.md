@@ -1107,3 +1107,22 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - a first visit under 4 s, measured from Bahrain.
 
   PR 29 merged.
+
+## D-098 — Connect X1 full audit merged (2026-11-03, approved by Shaheen: "ok"; asked for: "full check, audit and aggressive test")
+- **Report:** `phase-8/full-audit.md`, merged as Pioneers-services/connectx1 PR 30.
+- **Result:**
+  - no data leak between companies: every route tried with another company's record IDs, 67,096 requests;
+  - no crash under hostile input after the fix;
+  - money rules hold under simultaneous requests;
+  - nothing public or unencrypted on AWS.
+- **Fixed:**
+  - the nightly backup to Frankfurt failed, because it ran inside RDS's own backup window; the RDS window is now pinned to 20:00 UTC;
+  - screens too wide on phones;
+  - phone numbers scrambled in Arabic;
+  - 14 untranslated texts, with the translation check strengthened;
+  - a crash on a malformed measurement list.
+
+  219/219 tests; on AWS dev 218 pass, 1 skipped by design.
+- **Follow-ups:**
+  - confirm the 4 November nightly backup completes;
+  - the backup-failure alert is now urgent, since this failure was silent.
