@@ -1135,3 +1135,4 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   It was needed because the first nightly backup failed silently (D-098).
 - **How:** AWS Backup's own events go through an EventBridge rule to an SNS topic with an email subscription. The subscription must be confirmed from the first email AWS sends.
 - **Cost:** $0. EventBridge doesn't charge for AWS service events, and SNS email is free for the first 1,000 messages a month.
+- **Built and merged (2026-11-03)** as Pioneers-services/connectx1 PR 31; running on AWS dev. The rule is tested to match failures and not completions. The email subscription is waiting for confirmation from the inbox.
