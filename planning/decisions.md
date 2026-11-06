@@ -1136,3 +1136,22 @@ All of these run on the D-044 connection layer and are offered through the Add-o
 - **How:** AWS Backup's own events go through an EventBridge rule to an SNS topic with an email subscription. The subscription must be confirmed from the first email AWS sends.
 - **Cost:** $0. EventBridge doesn't charge for AWS service events, and SNS email is free for the first 1,000 messages a month.
 - **Built and merged (2026-11-03)** as Pioneers-services/connectx1 PR 31; running on AWS dev. The rule is tested to match failures and not completions. The email subscription is waiting for confirmation from the inbox.
+
+## D-100 — Finance X2 phase 2 design approved: the books for Connect X1's go-live (2026-11-06, approved by Shaheen: "ok"; follows D-086, D-088)
+- **The design** is `pioneers-accounting/phase-2/design.md`. Finance X2 builds what Connect X1's Bahrain go-live needs, in this order:
+  - the ledger;
+  - the Connect X1 feed;
+  - reports;
+  - the opening position;
+  - bank reconciliation;
+  - the NBR return;
+  - then multi-currency.
+- **The six decisions, all as recommended:**
+  - **F2-D1 (users):** at go-live, Finance X2 runs as a service behind Connect X1. Connect X1 keeps sign-in, two-factor and roles, and its Accounts screens show Finance X2's reports and send the accountant's work. Finance X2's own screens come with the standalone product.
+  - **F2-D2 (feed):** Finance X2 pulls Connect X1's outbox through a new service-only Connect X1 endpoint, after a cursor, every minute and on demand.
+  - **F2-D3 (VAT boxes):** Connect X1 adds a `tax` part (`[{box, net, vat}]`) to each outbox entry when it posts. Finance X2 tags its own entries the same way.
+  - **F2-D4 (locks):** Connect X1's month lock stays the one switch for its companies. It sends lock and unlock through the feed, and Finance X2 refuses manual journals in a locked month.
+  - **F2-D5 (hosting):** Finance X2 gets its own small stack in Connect X1's AWS account, Mumbai, reached only inside the private network. Dev runs at $21.23/month plus its own encryption key at $1.00/month (`phase-1/aws-cost-list.md`). Each resource is still created only after its itemised cost is approved.
+  - **F2-D6 (currency):** multi-currency comes right after go-live, unless a pilot invoices in a currency other than BHD.
+- **Connect X1's part** (the service endpoint, the `tax` tags, lock events, and Accounts screens that call Finance X2) is built in Connect X1's session, to the contract in `pioneers-accounting/phase-2/connectx1-contract.md`.
+- Phase 1's P1-D3 (Finance X2 issues tax invoices) is overtaken by D-086 and D-087: Connect X1 issues them. P1-D2 (Finance X2 owns locks) is replaced by F2-D4.
