@@ -1155,3 +1155,14 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - **F2-D6 (currency):** multi-currency comes right after go-live, unless a pilot invoices in a currency other than BHD.
 - **Connect X1's part** (the service endpoint, the `tax` tags, lock events, and Accounts screens that call Finance X2) is built in Connect X1's session, to the contract in `pioneers-accounting/phase-2/connectx1-contract.md`.
 - Phase 1's P1-D3 (Finance X2 issues tax invoices) is overtaken by D-086 and D-087: Connect X1 issues them. P1-D2 (Finance X2 owns locks) is replaced by F2-D4.
+
+## D-101 — Finance X2: AWS dev cost approved; Connect X1's outbox numbered per company in commit order (2026-11-07, approved by Shaheen: "approve AWS cost and P2-D1 as recommended"; follows D-100)
+- **AWS dev environment for Finance X2 approved:** $21.23/month, plus Finance X2's own encryption key at $1.00/month (`pioneers-accounting/phase-1/aws-cost-list.md`, AWS Price List, Mumbai, 2026-10-29). It's in Connect X1's AWS account in Mumbai, as its own stack:
+  - an RDS PostgreSQL 17 db.t4g.micro, single-AZ, 20 GB, encrypted with Finance X2's key, private;
+  - an on-demand API task for migrations and tests;
+  - an ECR repository and a log group.
+  - The backup copy to Frankfurt (+$3.78) and the production pieces (load balancer, Multi-AZ) are **not** included; each needs its own approval.
+- **P2-D1, as recommended by the phase 2 security review:**
+  - Connect X1 numbers its outbox entries **per company, with no gaps, in the order they commit** (`seq`), alongside the existing id.
+  - Finance X2 takes entries strictly in `seq` order and **stops at a gap** until the missing entry arrives, so no entry committed late by a long transaction (an Excel import, say) is ever skipped.
+  - This is part of the contract (`phase-2/connectx1-contract.md` §2.2) and is built in Connect X1's session before its outbox endpoint.
