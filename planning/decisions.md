@@ -1174,3 +1174,10 @@ Design: `connect-x1/go-live/accounts-screens-design.md` (contract §2.5). Connec
 2. **Recording the VAT return as filed takes two people:** one Accounts person prepares it and a second person (Accounts or the Owner) confirms it, as with quotations (D-076).
 3. **One-time keys:** Finance X2 accepts an `idempotencyKey` on journals, reversals, the opening position, explain and file; a second POST with the same key returns the first result (contract v3, Finance X2's session).
 4. **Manual journals by one person** are accepted at go-live. The audit trail names the person, mistakes are reversed, and the accountant reviews the journals before go-live.
+
+## D-103 — Connect X1 staging site approved: staging.connectx1.com, ≈ $33–36/month (2026-11-08, approved by Shaheen: "approve all four as recommended, start building"; P8-M4 to P8-M6)
+Design: `connect-x1/go-live/hosting-setup.md`. Connect X1's first public site, on the dev stack in Mumbai. It replaces the unbuilt review site (D-092).
+1. **Built and kept always on, at ≈ $33–36 a month** (AWS Price List, Mumbai, 2026-11-08): a private load balancer ≈ $18–21, one API container (0.5 vCPU / 1 GB ARM) $10.61, the container's public address $3.65, and CloudFront, the certificate, web files and logs ≈ $0–1.
+2. **A private load balancer behind CloudFront** (VPC origin). If that doesn't work in Mumbai, the fallback is a public load balancer that only accepts CloudFront (+$7.30 a month), and Shaheen is told first.
+3. **The address `staging.connectx1.com`.** DNS stays at Hostinger, where Shaheen adds two CNAME records.
+4. **No public sign-up on staging:** payments stay off, and Pioneers staff create the test companies.
