@@ -1167,3 +1167,10 @@ All of these run on the D-044 connection layer and are offered through the Add-o
   - Finance X2 takes entries strictly in `seq` order and **stops at a gap** until the missing entry arrives, so no entry committed late by a long transaction (an Excel import, say) is ever skipped.
   - This is part of the contract (`phase-2/connectx1-contract.md` §2.2) and is built in Connect X1's session before its outbox endpoint.
 - **How Connect X1 builds P2-D1 (2026-11-07, Pioneers-services/connectx1 PR 33):** the number is given at commit by a deferred trigger, not by a counter at insert as the contract suggested. Finance X2 sees the same thing: per company, no gaps, in commit order. A counter at insert would have held its lock until commit, so an Excel import would have blocked and failed other money actions in that company (`go-live/finance-feed.md`).
+
+## D-102 — Connect X1 Accounts screens design approved, all four decisions as recommended (2026-11-08, approved by Shaheen: "approve all four as recommended, start building")
+Design: `connect-x1/go-live/accounts-screens-design.md` (contract §2.5). Connect X1 shows Finance X2's books under Finance › Books, through one signed route per Finance X2 call; Connect X1 provides the Excel and PDF export.
+1. **Finance X2 answers calls** as a small always-on private service on the shared cluster (no load balancer, no internet access, an internal address). Finance X2's session prices it and gets approval before creating it. Until then Connect X1 builds and tests against a fake Finance X2.
+2. **Recording the VAT return as filed takes two people:** one Accounts person prepares it and a second person (Accounts or the Owner) confirms it, as with quotations (D-076).
+3. **One-time keys:** Finance X2 accepts an `idempotencyKey` on journals, reversals, the opening position, explain and file; a second POST with the same key returns the first result (contract v3, Finance X2's session).
+4. **Manual journals by one person** are accepted at go-live. The audit trail names the person, mistakes are reversed, and the accountant reviews the journals before go-live.
