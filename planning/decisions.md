@@ -1181,3 +1181,12 @@ Design: `connect-x1/go-live/hosting-setup.md`. Connect X1's first public site, o
 2. **A private load balancer behind CloudFront** (VPC origin). If that doesn't work in Mumbai, the fallback is a public load balancer that only accepts CloudFront (+$7.30 a month), and Shaheen is told first.
 3. **The address `staging.connectx1.com`.** DNS stays at Hostinger, where Shaheen adds two CNAME records.
 4. **No public sign-up on staging:** payments stay off, and Pioneers staff create the test companies.
+
+## D-104 — Finance X2 dev runs inside Connect X1's dev environment (2026-11-08, approved by Shaheen: "ok go with inside connect x1 for dev"; replaces the dev part of D-101)
+- **No separate dev database or server for Finance X2.** Its books sit in a separate `financex2` database on Connect X1's dev PostgreSQL (`connectx1-dev`), with Finance X2's own logins (`fx_app`, `fx_platform`) and its own row security. Saves the $21.23 a month approved in D-101. Finance X2's own key ($1.00) isn't created either: dev data is encrypted with Connect X1's key.
+- **Always on, as a second container in Connect X1's API task** (the one D-103 keeps running). The two talk over `localhost:3100` inside the task, so Finance X2 has no network address of its own. The separate service priced at $9.59 a month (`phase-2/service-cost.md`) is not needed.
+- **What Finance X2 keeps:**
+  - its own repository and its own test suite, which runs on every change and on AWS against the shared server, in a throwaway database;
+  - a tiny stack, `financex2-dev`: the image registry (cents a month) and the job definition for migrations and tests.
+- **Production is unchanged:** Finance X2 gets its own database and stack (D-075), priced and approved separately. Its customers' books shouldn't depend on Connect X1's deployments.
+- **Dev-only compromise:** Finance X2's migration and test jobs use the dev server's admin login. This is acceptable with test data only (D-032). In production, Finance X2's admin login is its own.
