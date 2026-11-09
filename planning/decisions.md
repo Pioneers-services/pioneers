@@ -1190,3 +1190,17 @@ Design: `connect-x1/go-live/hosting-setup.md`. Connect X1's first public site, o
   - a tiny stack, `financex2-dev`: the image registry (cents a month) and the job definition for migrations and tests.
 - **Production is unchanged:** Finance X2 gets its own database and stack (D-075), priced and approved separately. Its customers' books shouldn't depend on Connect X1's deployments.
 - **Dev-only compromise:** Finance X2's migration and test jobs use the dev server's admin login. This is acceptable with test data only (D-032). In production, Finance X2's admin login is its own.
+
+## D-105 — Carminta everywhere approved, all four decisions as recommended (2026-11-09, approved by Shaheen: "approve all four as recommended, start building"; amends D-024, D-051, D-052; design in `connect-x1/go-live/carminta-everywhere-design.md`, PR 39)
+- **Scope:** Carminta works across the whole app in the first release:
+  - **Ask:** on every screen, answering through tools as the signed-in person;
+  - **Today:** daily checks in code, worded by the model per person (brought forward from Wave 2, amending D-024);
+  - **Draft:** she fills the existing screen and the person confirms through the normal endpoint and its approvals. She never saves on her own.
+- **AWS limits:** free Service Quotas increase requests filed in Mumbai for Nova Lite and Nova Micro (Asia-Pacific), Claude Haiku 4.5 (India) and Claude Haiku 5.5 (Global).
+- **Global route for Claude Haiku 5.5:**
+  - if Haiku 5.5 beats Nova Lite on the Carminta benchmark, it becomes the included model, after the same data-protection check D-042 did for Mumbai (Q30);
+  - the terms then say requests may be processed outside Asia-Pacific;
+  - if the check says no, Nova Lite stays (D-051).
+- **Claude add-on (D-052) held:** not sold at BHD 5 per 5 users. At today's price (≈ $0.017 per request) it loses money. It's priced again after the benchmark.
+- **Cost:** $0 fixed a month; pay per use, ≈ $4–12 a month per pilot company on Nova Lite or Haiku 5.5; benchmark under $5.
+- **Build:** C0–C5, about 5–6 weeks, in parallel with Finance X2 (D-088).
