@@ -1204,3 +1204,16 @@ Design: `connect-x1/go-live/hosting-setup.md`. Connect X1's first public site, o
 - **Claude add-on (D-052) held:** not sold at BHD 5 per 5 users. At today's price (≈ $0.017 per request) it loses money. It's priced again after the benchmark.
 - **Cost:** $0 fixed a month; pay per use, ≈ $4–12 a month per pilot company on Nova Lite or Haiku 5.5; benchmark under $5.
 - **Build:** C0–C5, about 5–6 weeks, in parallel with Finance X2 (D-088).
+
+## D-106 — Connect X1 second full audit merged: Books, staging, setup fixes and Carminta C1 on main, 16 findings fixed (2026-11-10, merged by Shaheen as PR 41; report in `connect-x1/phase-8/full-audit-2.md`)
+- **What merged:** PR 41 carried PRs 36, 37, 38 and 40 together with the audit's fixes, so the four were tested and merged as one.
+- **Result:** 260 tests pass. The cross-company and hostile-input sweep made 147,956 requests on three company pairs with 0 leaks and 0 crashes. `npm audit` reports 0. No secrets in the history.
+- **Fixed, highest first:**
+  - Carminta would have given the AI model amounts as raw fils (high, caught before the model was switched on). Every number is now classified; unclassified ones are removed, never passed raw.
+  - The Books reports and Excel export crashed on a wrong-shaped reply from Finance X2.
+  - The platform database login could read 48 business tables (migration 034 removes it).
+  - Carminta had no spending limit, could outlast the 30-second edge limit, and was rate-limited per office instead of per person.
+  - API replies had no cache header.
+  - NestJS 12.3.2 and vite 8.3.5 close the dependency advisories (P4-M3 done).
+- **Carminta's hard stop at the monthly allowance (D-052) is in place** until extra-use packs exist. Shaheen was asked to confirm it and hasn't answered yet; it changes if he says so.
+- **Still open:** the real AI model is untested (AWS limits are 0); live AWS settings weren't re-checked (sign-in expired); the VAT-filing crash window needs a contract v3 addition from Finance X2; staging gets this code at the next deploy.
