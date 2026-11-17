@@ -1217,3 +1217,19 @@ Design: `connect-x1/go-live/hosting-setup.md`. Connect X1's first public site, o
   - NestJS 12.3.2 and vite 8.3.5 close the dependency advisories (P4-M3 done).
 - **Carminta's hard stop at the monthly allowance (D-052) is in place** until extra-use packs exist. Shaheen was asked to confirm it and hasn't answered yet; it changes if he says so.
 - **Still open:** the real AI model is untested (AWS limits are 0); live AWS settings weren't re-checked (sign-in expired); the VAT-filing crash window needs a contract v3 addition from Finance X2; staging gets this code at the next deploy.
+
+## D-107 — Connect X1: the usability prototype applied to the real screens (2026-11-17, asked by Shaheen: "apply all edits and recommendations from the prototype and the recommendations"; prototype in PR 42, build in PR 43)
+- **Next step on every job page:** the current step and its owner sit at the top of the enquiry, quotation and project pages.
+  - If it's yours, a button opens the tab where the work is done.
+  - If it isn't, the card names the person or team it waits for and offers "Send a reminder": once per job every 12 hours, recorded in the audit log, shown on the recipient's Today while the step is still theirs.
+- **Step 3 changes owner:** until the initial visit is requested, asking for it is Sales' step; after that it is the measurement department's. Before, the job said it was waiting for the measurement department when nobody had asked them yet.
+- **Today:** Carminta's daily checks (D-105 step C2) are plain rules on the records, not the AI model:
+  - a deposit unpaid past the company's `finding.deposit_days`;
+  - a quotation 2 or more days in approval;
+  - a visit not booked after 2 days, or not recorded a day after it was due;
+  - a project stage past its planned date;
+  - a post-dated cheque due within 7 days (Accounts only).
+
+  It also shows the person's own jobs that wait on someone else. Every check uses the lists' visibility rule (D-070).
+- **The power and plumbing points visit** counts sockets, switches, water inlets and drains (at least one) instead of sizes. The counts show on the visit and the measurement sheet.
+- **Not done:** Carminta drafting actions (step C3) waits for the AI model, which AWS still blocks. The other recommendations need Shaheen: staff trying the prototype, the AWS support case, the Bahrain accountant, deleting the unused AWS access key, merging PR 39.
