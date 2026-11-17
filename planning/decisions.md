@@ -1245,3 +1245,14 @@ Design: `connect-x1/go-live/hosting-setup.md`. Connect X1's first public site, o
   - no public sign-up until the payment provider is chosen (Q31);
   - every production release needs Shaheen's approval, and only code already running on staging is released.
 - Before the first real company: the 12-item checklist in the design, including the production restore drill (D-031) and the audit sweep.
+
+## D-109 — Carminta's AI through Claude Platform on AWS, Claude Haiku 5.5 (2026-11-17, approved by Shaheen: "approve option A"; amends D-051 and D-105 decision 3)
+- **Why:** AWS refused Bedrock model access for account 182719847224 (support case 179102508800489, 2026-11-11): access is "restricted based on account usage history", the daily limit "can't be increased directly", and it "might change automatically as time passes" with no date. A new production account would have no usage history either.
+- **Provider:** Claude Platform on AWS. Anthropic operates it on AWS, it is billed on the AWS bill through AWS Marketplace, and requests are SigV4-signed with Connect X1's own signer (no outside package). It is not Bedrock, so the Bedrock refusal shouldn't apply; this is confirmed when it's switched on.
+- **Model:** Claude Haiku 5.5 (`claude-haiku-5-5`), $0.10 in / $0.50 out per million tokens (Anthropic's price list), about $6–12 a month per pilot company at heavy use (D-105 figures).
+- **Where requests are processed:** worldwide (`inference_geo: global`); Anthropic offers no Gulf or India option. The workspace is in Mumbai. As D-105 decision 3 set, real customer data goes to the model only after the data-protection check (Q30). Until then the model is switched on for staging's test companies only, never in production.
+- **Kept:**
+  - the Bedrock path stays in the code, in case AWS lifts the restriction;
+  - the rules fallback, the off switch and the monthly allowance are unchanged;
+  - the Claude add-on (D-052) stays held.
+- **Shaheen's part:** sign up for Claude Platform on AWS in the AWS console (accepting the Marketplace terms), complete the organisation form, create the workspace in ap-south-1, and turn on outbound web identity federation once for the account.
