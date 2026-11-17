@@ -1233,3 +1233,15 @@ Design: `connect-x1/go-live/hosting-setup.md`. Connect X1's first public site, o
   It also shows the person's own jobs that wait on someone else. Every check uses the lists' visibility rule (D-070).
 - **The power and plumbing points visit** counts sockets, switches, water inlets and drains (at least one) instead of sizes. The counts show on the visit and the measurement sheet.
 - **Not done:** Carminta drafting actions (step C3) waits for the AI model, which AWS still blocks. The other recommendations need Shaheen: staff trying the prototype, the AWS support case, the Bahrain accountant, deleting the unused AWS access key, merging PR 39.
+
+## D-108 — Connect X1 production hosting approved: own AWS account, ≈ $133–139/month (2026-11-17, approved by Shaheen: "approve all five as recommended, larger database"; design in `connect-x1/go-live/production-hosting.md`, PR 44)
+1. **A separate AWS account for production**, in the same organisation. Dev, staging and the AI tests stay in the current account (182719847224).
+2. **Database `db.t4g.small` Multi-AZ** (2 vCPU, 2 GB, a standby in a second zone), PostgreSQL 17, encrypted, deletion protection.
+3. **Two API containers in two zones, a web firewall (AWS WAF on CloudFront), HTTPS from CloudFront to the load balancer, and access logs kept 90 days.**
+4. **Company addresses from day one:** `<company>.connectx1.com` (D-030), with a wildcard certificate and one wildcard record at Hostinger.
+5. **Cost approved: ≈ $133–139 a month** (Mumbai price list read 2026-11-17). This is on top of staging (≈ $33–36, D-103) and the AI's pay-per-use.
+- Unchanged:
+  - backups for 35 days, plus a daily Frankfurt copy (D-037);
+  - no public sign-up until the payment provider is chosen (Q31);
+  - every production release needs Shaheen's approval, and only code already running on staging is released.
+- Before the first real company: the 12-item checklist in the design, including the production restore drill (D-031) and the audit sweep.
